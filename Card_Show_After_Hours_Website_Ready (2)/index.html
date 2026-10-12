@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Card Show: Dream Edition PRODUCT LOCKED V4 — Dealer Row</title>
+<style>
+:root{--bg:#080c14;--panel:#121c2b;--panel2:#19283d;--line:#2e415d;--text:#f4f7ff;--muted:#a9b8cd;--gold:#f4ca70;--green:#6be0a5;--blue:#79bdff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#263e61 0,#080c14 58%);color:var(--text);font-family:Inter,system-ui,Segoe UI,sans-serif;min-height:100vh}
+header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:15px clamp(12px,4vw,38px);background:#080c14eF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.brand{font-weight:1000;letter-spacing:.08em}.brand em{font-style:normal;color:var(--gold)}.cash{border:1px solid #466c56;background:#11291e;color:#b8ffd5;border-radius:12px;padding:9px 13px;font-weight:900}
+main{max-width:1240px;margin:auto;padding:22px 16px 50px}.eyebrow{font-size:.73rem;letter-spacing:.18em;font-weight:900;color:var(--gold)}.hero{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:10px 0 20px}.hero h1{font-size:clamp(2rem,5vw,3.6rem);line-height:.98;margin:8px 0}.hero p{color:var(--muted);line-height:1.55;max-width:650px;margin-bottom:0}.save-note{color:var(--green);font-size:.78rem;white-space:nowrap}
+.grid{display:grid;grid-template-columns:minmax(275px,.85fr) minmax(320px,1.15fr);gap:17px}.panel{background:linear-gradient(155deg,#172338,#101722);border:1px solid var(--line);border-radius:19px;overflow:hidden;box-shadow:0 16px 44px #0005}.ph{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}.ph strong{letter-spacing:.045em}.tag{font-size:.68rem;font-weight:900;background:#263a55;color:#d9eaff;border-radius:100px;padding:5px 8px;white-space:nowrap}
+.card-stage{padding:20px;display:grid;place-items:center;background:radial-gradient(ellipse at center,#2a4260,#111927 73%)}.card{width:min(100%,280px);aspect-ratio:5/7;border-radius:16px;padding:7px;background:linear-gradient(135deg,#fff1ba,#bd8c32 18%,#d4f2ef 28%,var(--card1,#15516c) 46%,#111c31 62%,var(--card2,#65b6a2) 79%,#d7ad54);box-shadow:0 18px 40px #000a;transform:rotate(-1deg)}.card-inner{height:100%;border-radius:11px;position:relative;overflow:hidden;padding:12px;display:flex;flex-direction:column;justify-content:space-between;border:2px solid #f2e8c7;background:linear-gradient(150deg,var(--card1,#14344e),#091422 55%,var(--card2,#1a8b7c))}.card-inner:before{content:"";position:absolute;inset:-30%;background:repeating-linear-gradient(125deg,transparent 0 13px,#ffffff12 14px 16px),radial-gradient(circle at 50% 40%,#a5f5e855,transparent 45%);transform:rotate(5deg)}.ctop,.cbottom,.art,.serial{position:relative;z-index:1}.ctop{display:flex;justify-content:space-between;font-size:.61rem;font-weight:950;letter-spacing:.1em}.ctop b{color:#ffe6a0}.art{height:65%;display:grid;place-items:center}.player{width:68%;height:100%;max-height:245px;position:relative;filter:drop-shadow(0 8px 8px #0009)}.body{position:absolute;left:19%;top:37%;width:62%;height:48%;border-radius:32% 32% 18% 18%;background:linear-gradient(90deg,#111d32,#36516e 50%,#0b1729);border:2px solid #dfc782}.head{position:absolute;left:36%;top:16%;width:28%;height:20%;border-radius:43%;background:linear-gradient(90deg,#754b35,#c08c64 50%,#603b2c);border:2px solid #ead9a6}.helmet{position:absolute;left:23%;top:8%;width:54%;height:25%;border-radius:45% 45% 20% 20%;background:linear-gradient(120deg,#eef2f4,#96b2c0 52%,#314b62);border:3px solid #ffe6a0}.helmet:after{content:"";position:absolute;left:9%;right:-12%;bottom:8%;height:5px;background:#f3d987;transform:rotate(8deg)}.arm{position:absolute;top:45%;height:33%;width:22%;border-radius:28px;background:linear-gradient(90deg,#754a34,#bf8b65);border:2px solid #d9bf7e}.left{left:3%;transform:rotate(20deg)}.right{right:3%;transform:rotate(-24deg)}.ball{position:absolute;right:-1%;top:48%;width:30%;aspect-ratio:1.7;border-radius:50%;background:linear-gradient(90deg,#5c2c16,#b46b36);border:2px solid #f1d4a0;transform:rotate(-28deg)}.ball:after{content:"";position:absolute;left:42%;top:12%;height:75%;width:2px;background:#f7e6c0}.serial{align-self:flex-end;font-size:.65rem;font-weight:900;color:#fff0b8}.cbottom{text-align:center}.cname{font-size:1.27rem;font-weight:1000;letter-spacing:.04em;text-shadow:0 2px 8px #000}.cset{font-size:.58rem;color:#e4efed;letter-spacing:.1em;margin-top:5px}.meta{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:14px}.stat{padding:11px;background:#0b1320;border:1px solid #293b53;border-radius:11px}.stat small{display:block;color:var(--muted);font-size:.7rem}.stat b{display:block;margin-top:4px}
+.dealer-tabs{display:flex;gap:7px;overflow:auto;padding:12px 14px;border-bottom:1px solid var(--line)}.dealer-tab{white-space:nowrap;border:1px solid #344a67;background:#111d2e;color:#dce9fa;padding:9px 11px;border-radius:10px;font-weight:850;cursor:pointer}.dealer-tab.active{background:linear-gradient(135deg,#f3ce7b,#bd8a34);color:#18140b;border-color:#ffe3a0}.dealer-info{display:flex;align-items:center;gap:11px;padding:14px 16px 4px}.avatar{width:43px;height:43px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#f4cd75,#956526);color:#1c160b;font-weight:1000}.dname{font-weight:950}.status{font-size:.73rem;color:var(--green);margin-top:3px}.chatlog{padding:14px 16px;display:flex;flex-direction:column;gap:10px;height:300px;overflow:auto}.bubble{max-width:91%;padding:11px 13px;border-radius:14px;line-height:1.45;font-size:.91rem}.dealer{align-self:flex-start;background:#202e44;border:1px solid #30435e;border-bottom-left-radius:4px}.you{align-self:flex-end;background:#194d48;border:1px solid #267d6b;border-bottom-right-radius:4px}.bubble small{display:block;font-size:.65rem;color:#b8c8dd;margin-bottom:4px;font-weight:900}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px 14px}.btn{border:1px solid #3a4f6c;background:#1b2a40;color:var(--text);padding:10px 11px;border-radius:10px;font-weight:850;cursor:pointer;text-align:left}.btn:hover{border-color:var(--blue);background:#263c58}.btn.gold{background:linear-gradient(135deg,#f3ce79,#c28d32);color:#191409;border-color:#ffe1a0}.btn:disabled{opacity:.4;cursor:not-allowed}.chatinput{display:flex;gap:7px;padding:12px 16px;border-top:1px solid var(--line);background:#0c1421}.chatinput input{flex:1;min-width:0;background:#111c2d;color:white;border:1px solid #344760;border-radius:10px;padding:11px;font:inherit}.chatinput button{border:0;border-radius:10px;padding:0 14px;background:#70b9ff;color:#081321;font-weight:950;cursor:pointer}
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:17px;margin-top:17px}.inv{padding:13px 15px;display:flex;flex-direction:column;gap:8px;min-height:100px}.item{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px;background:#0c1421;border:1px solid #293950;border-radius:11px}.item small{display:block;color:var(--muted);margin-top:3px}.pill{font-size:.67rem;color:#ffe6a1;border:1px solid #796137;border-radius:99px;padding:5px 7px;white-space:nowrap}.guide{padding:15px 18px;color:var(--muted);line-height:1.7}.guide b{color:var(--text)}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#17283b;border:1px solid #48627d;border-radius:12px;padding:12px 18px;z-index:9;display:none;max-width:90%;text-align:center;box-shadow:0 8px 30px #0009}
+
+
+.box-shelf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;padding:16px}
+.product-box{border:1px solid #344963;border-radius:14px;padding:12px;background:linear-gradient(150deg,#1a2a40,#0c1420);display:flex;flex-direction:column;gap:7px;min-width:0}
+.product-photo{height:155px;display:grid;place-items:center;background:radial-gradient(ellipse,#263a53,#0a1019);border-radius:10px;overflow:hidden}
+.product-photo img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain}
+.product-box b{font-size:.92rem}.product-box small{color:var(--muted);font-size:.75rem;min-height:2em}.product-price{font-weight:950;color:var(--gold);font-size:.92rem;margin-top:auto}.product-box .btn{width:100%;text-align:center}
+
+.boxshop-grid{display:grid;grid-template-columns:minmax(220px,.75fr) minmax(300px,1.25fr);gap:20px;padding:18px}
+.box-display{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:18px;background:radial-gradient(ellipse at center,#283d5a,#0b111b 72%);border-radius:15px;border:1px solid #30435d;min-height:300px}
+.nt-box{width:min(100%,260px);height:215px;position:relative;perspective:700px;filter:drop-shadow(0 18px 16px #000a)}
+.nt-front{position:absolute;left:9%;top:0;width:80%;height:100%;background:linear-gradient(145deg,#f5e8bd 0%,#c8a65b 13%,#111b2a 14%,#172c42 62%,#0b1421 100%);border:3px solid #e2c879;box-shadow:inset 0 0 0 5px #111a26,inset 0 0 0 7px #c4a65e;padding:15px 10px;color:#f6e6b0;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;transform:skewY(-1deg)}
+.nt-side{position:absolute;right:0;top:7px;width:13%;height:97%;background:linear-gradient(90deg,#8e6c31,#d7bd78,#47351b);transform:skewY(14deg);transform-origin:left}
+.nt-top{font-size:.53rem;letter-spacing:.12em;font-weight:900}
+.nt-title{font-family:Georgia,serif;font-weight:1000;font-size:1.42rem;line-height:.92;letter-spacing:.05em;text-shadow:0 2px 3px #000}
+.nt-title span{font-size:1.2rem;color:#f4d987}
+.nt-emblem{width:64px;height:64px;border:2px solid #e9d08b;transform:rotate(45deg);display:grid;place-items:center;background:linear-gradient(135deg,#263a51,#0b111a);box-shadow:0 0 16px #e6c66c33}
+.nt-emblem:after{content:"NT";transform:rotate(-45deg);font-family:Georgia,serif;font-size:1.6rem;font-weight:900}
+.nt-bottom{font-size:.53rem;letter-spacing:.09em;font-weight:900}
+.box-caption{text-align:center}.box-caption b{display:block;font-size:.9rem}.box-caption small{display:block;color:var(--muted);font-size:.7rem;margin-top:4px}
+.box-details{padding:8px 4px}.box-price-row{display:flex;align-items:center;justify-content:space-between;gap:12px}.box-price-row small{font-size:.7rem;color:var(--muted);letter-spacing:.1em}.box-price{font-size:1.8rem;font-weight:1000;color:var(--gold)}.box-details p{color:var(--muted);line-height:1.55;font-size:.9rem}.box-actions{display:flex;flex-wrap:wrap;gap:8px}.box-actions .btn{flex:1}.rip-results{margin-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.rip-empty{grid-column:1/-1;color:var(--muted);border:1px dashed #354b67;padding:18px;border-radius:12px;text-align:center;font-size:.86rem}.pull{border:1px solid #3c4d65;border-radius:12px;padding:10px;background:linear-gradient(150deg,#192a40,#0c1420);min-width:0}.pull .pull-art{height:70px;border-radius:8px;margin-bottom:8px;display:grid;place-items:center;background:linear-gradient(135deg,var(--p1),#111c2c,var(--p2));border:1px solid #cbb36b;color:#fff0bb;font-weight:1000;font-size:1.1rem;text-shadow:0 2px 6px #000}.pull b{display:block;font-size:.78rem}.pull small{display:block;color:var(--muted);font-size:.68rem;margin-top:4px}.pull .value{display:block;color:var(--green);font-size:.78rem;font-weight:900;margin-top:6px}
+
+
+.visitor-layout{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:14px;align-items:center;padding:17px}
+.visitor-avatar{width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#73c6ff,#34588d);display:grid;place-items:center;color:#07111e;font-weight:1000;font-size:1.15rem}
+.visitor-copy b{font-size:1rem}.visitor-copy small{display:block;color:var(--muted);margin-top:3px}.visitor-copy p{color:#d4deec;margin:9px 0;font-size:.9rem;line-height:1.45}.visitor-offer{font-weight:900;color:var(--gold);font-size:.86rem}.visitor-actions{display:flex;flex-direction:column;gap:7px;min-width:145px}.visitor-foot{border-top:1px solid var(--line);padding:10px 17px;color:var(--muted);font-size:.75rem}
+.cheat-area{padding:15px 18px}.cheat-area p{color:var(--muted);margin-top:0}.cheat-buttons{display:flex;flex-wrap:wrap;gap:8px}.cheat-hint{display:block;color:var(--muted);margin-top:12px}.cheat-hint b{color:var(--text)}
+
+.real-hit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;padding:16px}
+.real-hit{border:1px solid #2e415d;border-radius:13px;background:#0b1320;padding:10px;min-width:0}
+.real-hit img{display:block;width:100%;height:220px;object-fit:contain;background:#070c14;border-radius:9px;margin-bottom:10px}
+.real-hit b{display:block;font-size:.84rem;line-height:1.35}
+.real-hit small{display:block;color:var(--muted);font-size:.7rem;line-height:1.4;margin-top:5px}
+.real-photo-note{padding:0 16px 15px;margin:0;color:var(--muted);font-size:.75rem;line-height:1.45}
+.pull .pull-art{height:150px;overflow:hidden;padding:4px}
+.pull .pull-art img{width:100%;height:100%;object-fit:contain;border-radius:6px;background:#080e18}
+
+
+.visitor-chatline{display:flex;gap:7px;margin-top:10px}.visitor-chatline input{min-width:0;flex:1;background:#111c2d;color:white;border:1px solid #344760;border-radius:9px;padding:10px;font:inherit;font-size:.84rem}.visitor-transcript{margin-top:8px;color:#cbd7e8;font-size:.82rem;line-height:1.45;max-height:95px;overflow:auto;background:#0c1421;border:1px solid #26384f;padding:9px;border-radius:9px}.pull .pull-art img{width:100%;height:100%;object-fit:contain;background:#050911}
+
+
+.product-box{min-width:0}
+.pull-comp{display:block;color:#bdc9da;font-size:.68rem;line-height:1.35;margin-top:6px}
+.pull-source{display:inline-block;color:#9dc9ff;font-size:.7rem;margin-top:7px;text-decoration:underline}
+.box-shelf{grid-template-columns:repeat(auto-fit,minmax(165px,1fr));max-height:none}.product-photo{height:150px}.product-box b{display:block;line-height:1.3}.product-box small{display:block;min-height:34px}
+
+
+@media(max-width:700px){
+ body{font-size:14px}
+ .app,.layout,.main-layout,.game-layout{display:block!important;width:100%!important;max-width:100vw!important;padding:8px!important}
+ .box-shelf{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+ .product-photo{height:120px!important}
+ .product-box{padding:8px!important;min-width:0!important}
+ .product-box b{font-size:.85rem!important}
+ .product-box small{font-size:.72rem!important}
+ .chat-panel,.dealer-panel,.visitor-panel,.collection-panel{width:100%!important;max-width:100%!important;margin:8px 0!important}
+ .chat-log,.transcript{max-height:260px!important}
+ button,.btn{min-height:40px}
+ input,textarea{font-size:16px!important;max-width:100%}
+ #cardVisual{max-width:100%!important}
+}
+@media(min-width:701px) and (max-width:1100px){.box-shelf{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+@media(max-width:800px){.visitor-layout{grid-template-columns:56px 1fr}.visitor-avatar{width:52px;height:52px}.visitor-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr 1fr}.visitor-actions .btn{font-size:.8rem;text-align:center;padding:10px 6px}}
+
+@media(max-width:800px){.grid,.lower,.boxshop-grid,.box-shelf{grid-template-columns:1fr}.hero{display:block}.save-note{display:block;margin-top:10px}.chatlog{height:270px}} 
+
+.pack-art{width:100%;height:100%;min-height:145px;flex-direction:column;align-items:center;justify-content:center;gap:9px;text-align:center;padding:12px;background:linear-gradient(135deg,#101824,var(--boxaccent),#080e18);border:3px double #e7d5a2;border-radius:8px;color:#fff8df;box-shadow:inset 0 0 28px #0008}
+.pack-art span{font-size:10px;font-weight:900;letter-spacing:.14em}.pack-art strong{font-size:17px;line-height:1.12;text-transform:uppercase;text-shadow:0 2px 5px #000}.pack-art small{font-size:9px;color:#f8e5bb;min-height:auto!important}
+
+.visitor-selector{display:flex;flex-direction:column;gap:5px;margin-top:9px}.visitor-selector label,.grade-form label{font-size:.78rem;color:#aec4db;font-weight:800}.visitor-selector select,.grade-form select{background:#0b1626;color:#f1f6ff;border:1px solid #47607e;padding:10px;border-radius:9px;max-width:100%;width:100%}.visitor-target{border-left:3px solid #e7bd69;background:#0e1b2d;padding:9px;color:#f5dca0;border-radius:6px;font-size:.79rem;line-height:1.5}.grade-flex{display:grid;grid-template-columns:240px 1fr;gap:20px;padding:20px}.grade-slab{background:linear-gradient(145deg,#bfccdf,#ecf3f9 50%,#9baabe);padding:13px;border-radius:15px;border:2px solid #f2f7ff;min-height:320px;color:#15213a;box-shadow:inset 0 0 8px #33465b70,0 10px 28px #0008}.grade-slab-label{background:#27364f;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:13px;border-radius:7px;font-size:1.1rem;font-weight:900}.grade-slab-label b{font-size:2.1rem;color:#fff}.grade-slab-card{background:linear-gradient(135deg,#0e3f56,#162338,#716034);border:3px solid #d1b46d;color:#fff9e8;min-height:185px;margin:12px 5px;display:grid;place-items:center;padding:16px;text-align:center;font-weight:900;line-height:1.4}.grade-slab-footer{text-align:center;font-size:.57rem;letter-spacing:.1em}.grade-form{display:flex;flex-direction:column;gap:10px}.grade-form p{line-height:1.55;color:#c6d7eb;margin:0 0 4px}.grade-details,.grade-result{background:#0b1522;border:1px solid #344861;border-radius:10px;padding:12px;color:#d1dfed;line-height:1.5}.grade-result{color:#f3dc9f}.grade-form button{max-width:300px}.item{flex-wrap:wrap}.item>div:first-child{min-width:170px;flex:1}.inv select{max-width:260px}.collector-pill{color:#e9c46c;font-size:.7rem}
+@media(max-width:700px){.grade-flex{grid-template-columns:1fr}.grade-slab{max-width:280px;width:100%;margin:auto}.grade-form button{max-width:none}.visitor-selector{width:100%}}
+</style></head>
+<body>
+<header><div class="brand">CARD SHOW <em>AFTER HOURS</em></div><div class="cash">CASH: <span id="cash">$1,200</span></div></header>
+<main>
+<div class="eyebrow">CONVENTION FLOOR / DEALER ROW</div>
+<section class="hero"><div><h1>Every table's a new deal.</h1><p>Meet different dealers, negotiate over different sports cards, and build a collection. Progress saves in this browser on this device.</p></div><div class="save-note" id="saveNote">● Autosave enabled</div></section>
+<div class="grid">
+<section class="panel"><div class="ph"><strong>CARD ON THE TABLE</strong><div style="display:flex;gap:7px;align-items:center;flex-wrap:wrap"><button class="tag" id="showRealCard" type="button" style="cursor:pointer;border:0">REAL CARD PHOTO</button><label class="tag" for="cardPhotoInput" style="cursor:pointer">UPLOAD PHOTO</label><input id="cardPhotoInput" type="file" accept="image/*" style="display:none"><span class="tag" id="caseTag">CASE #014</span></div></div>
+<div class="card-stage"><div class="card" id="cardVisual"><div class="card-inner"><img id="uploadedCardImage" alt="Uploaded card photo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#07101b;z-index:5;display:none"><div class="ctop"><span id="team">PHILADELPHIA</span><b id="setName">DOWNTOWN-STYLE</b></div><div class="art"><div class="player"><div class="helmet"></div><div class="head"></div><div class="body"></div><div class="arm left"></div><div class="arm right"></div><div class="ball"></div></div></div><div class="serial" id="serial">CASE HIT • ART #014</div><div class="cbottom"><div class="cname" id="cardName">JALEN HURTS</div><div class="cset" id="cardSubtitle">ORIGINAL FAN-MADE GAME ART</div></div></div></div></div>
+<div class="meta"><div class="stat"><small>Dealer asking</small><b id="ask">$780</b></div><div class="stat"><small>Your latest offer</small><b id="offer">None yet</b></div><div class="stat"><small>Condition</small><b id="condition">Near Mint</b></div><div class="stat"><small>Game estimate</small><b id="estimate">$650–$850</b></div></div>
+</section>
+<section class="panel"><div class="ph"><strong>DEALER CONVERSATION — DREAM EDITION</strong><span class="tag" id="dealerTag">DEALER 1 OF 5</span></div><div class="dealer-tabs" id="dealerTabs"></div>
+<div class="dealer-info"><div class="avatar" id="avatar">MR</div><div><div class="dname" id="dealerName">Marcus Reed</div><div class="status">● At his table • Open to offers</div></div></div>
+<div class="chatlog" id="chatLog" aria-live="polite"></div>
+<div class="actions" id="actions">
+<button class="btn" data-action="condition">Ask about condition</button><button class="btn" data-action="comp">Ask about comps</button><button class="btn" data-action="low">Make a low offer</button><button class="btn" data-action="fair">Make a fair offer</button><button class="btn" data-action="trade">Ask about a trade</button><button class="btn gold" data-action="buy">Buy at asking price</button>
+</div>
+<form class="chatinput" id="chatForm"><input id="chatInput" maxlength="180" placeholder="Talk to this dealer…" autocomplete="off"><button>Send</button></form>
+</section>
+</div>
+
+
+<section class="panel real-hit-gallery" style="margin-top:17px">
+ <div class="ph"><strong>REAL CASE-HIT & PREMIUM CARD EXAMPLES</strong><span class="tag">REAL COLLECTIBLE PHOTOS</span></div>
+ <div class="real-hit-grid">
+  <article class="real-hit"><img src="https://d1htnxwo4o0jhw.cloudfront.net/cert/154151659/small/oQQSpj4p2ECt7B-OJXNDjg.jpg" alt="PSA-graded 2023 Donruss Downtown Jalen Hurts card"><b>2023 Donruss Downtown! — Jalen Hurts</b><small>Actual PSA-graded card photo · PSA 9</small></article>
+  <article class="real-hit"><img src="https://d1htnxwo4o0jhw.cloudfront.net/cert/185263483/small/l-qUkk5AtEu5gTy2WzsrDg.jpg" alt="PSA-graded 2024 Donruss Optic Downtown Duos Jalen Hurts and A.J. Brown card"><b>2024 Donruss Optic Downtown Duos — Hurts / A.J. Brown</b><small>Actual PSA-graded card photo · PSA 10</small></article>
+  <article class="real-hit"><img src="https://columbiasportscard.com/cdn/shop/files/2024-panini-national-treasures-football-hobby-box-columbia-sports-cards-4419885.jpg?v=1754590669&width=1946" alt="National Treasures Football official product sell sheet with example autograph and memorabilia cards"><b>National Treasures Football — autograph & memorabilia examples</b><small>Official product sell sheet with card design examples</small></article>
+ </div>
+ <p class="real-photo-note">These photos load from PSA and a card shop's product page, so the game needs internet access to display them. They show real examples, not guaranteed pulls.</p>
+</section>
+
+<section class="panel boxshop" style="margin-top:17px">
+ <div class="ph"><strong>HOBBY BOX BREAK ROOM</strong><span class="tag">REAL BOX PHOTOS • RIP PACKS</span></div>
+ <div class="box-shelf">
+  <article class="product-box"><div class="product-photo"><img src="https://columbiasportscard.com/cdn/shop/files/2024-panini-national-treasures-football-hobby-box-columbia-sports-cards-9720322.jpg?v=1754590667&amp;width=1946" alt="2024 National Treasures Football product photograph" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pack-art" style="display:none;--boxaccent:hsl(190 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2024 National Treasures Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2024 National Treasures Football</b><small>Football • Premium autographs &amp; patches</small><div class="product-price">$1,500 game cash</div><button class="btn gold box-buy" data-box="nt">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><img src="https://assets.paniniamerica.net/catalog/product/2/6/26_donruss_fb_hobbyc1964-i_03_.png" alt="2026 Donruss Football Hobby product photograph" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pack-art" style="display:none;--boxaccent:hsl(229 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2026 Donruss Football Hobby</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2026 Donruss Football Hobby</b><small>Football • Rated Rookies &amp; inserts</small><div class="product-price">$450 game cash</div><button class="btn gold box-buy" data-box="donruss">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><img src="https://assets.paniniamerica.net/catalog/product/2/6/26_donruss_fb_blaster_hobby_c2919.png" alt="2026 Donruss Football Blaster product photograph" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pack-art" style="display:none;--boxaccent:hsl(268 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2026 Donruss Football Blaster</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2026 Donruss Football Blaster</b><small>Football • Budget packs</small><div class="product-price">$120 game cash</div><button class="btn gold box-buy" data-box="blaster">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(307 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2025 Topps Chrome Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2025 Topps Chrome Football</b><small>Football • Rookie autographs</small><div class="product-price">$500 game cash</div><button class="btn gold box-buy" data-box="toppschrome">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><img src="https://cdn11.bigcommerce.com/s-a0ebd/images/stencil/1280w/products/8983/23096/2025-topps-chrome-black-football-hobby-box__30524.1781126866.jpg?c=2" alt="2025 Topps Chrome Black Football product photograph" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pack-art" style="display:none;--boxaccent:hsl(346 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2025 Topps Chrome Black Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2025 Topps Chrome Black Football</b><small>Football • Black chrome</small><div class="product-price">$650 game cash</div><button class="btn gold box-buy" data-box="toppsblack">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><img src="https://ripchaser.com/static/box-art/6577_box.webp" alt="2026 Topps Flagship Football Hobby product photograph" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pack-art" style="display:none;--boxaccent:hsl(25 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2026 Topps Flagship Football Hobby</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2026 Topps Flagship Football Hobby</b><small>Football • Chrome rookie signatures</small><div class="product-price">$275 game cash</div><button class="btn gold box-buy" data-box="toppsflagship">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(64 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2025 Topps Cosmic Chrome Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2025 Topps Cosmic Chrome Football</b><small>Football • Planetary inserts</small><div class="product-price">$600 game cash</div><button class="btn gold box-buy" data-box="cosmic">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(103 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2025 Topps Chrome Sapphire Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2025 Topps Chrome Sapphire Football</b><small>Football • Sapphire parallels</small><div class="product-price">$1,250 game cash</div><button class="btn gold box-buy" data-box="sapphire">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(142 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Donruss Optic Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Donruss Optic Football</b><small>Football • Downtown chase</small><div class="product-price">$550 game cash</div><button class="btn gold box-buy" data-box="optic">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><img src="https://cdn11.bigcommerce.com/s-a0ebd/images/stencil/1280x1280/products/8670/22732/2025-panini-black-football-hobby-box__67858.1757353418.jpg?c=2" alt="2025 Panini Black Football product photograph" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pack-art" style="display:none;--boxaccent:hsl(181 48% 56%)"><span>FOOTBALL HOBBY</span><strong>2025 Panini Black Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>2025 Panini Black Football</b><small>Football • Premium rookie hits</small><div class="product-price">$700 game cash</div><button class="btn gold box-buy" data-box="paniniblack">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(220 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Mosaic Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Mosaic Football</b><small>Football • Mosaics</small><div class="product-price">$400 game cash</div><button class="btn gold box-buy" data-box="mosaic">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(259 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Contenders Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Contenders Football</b><small>Football • Rookie tickets</small><div class="product-price">$350 game cash</div><button class="btn gold box-buy" data-box="contenders">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(298 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Absolute Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Absolute Football</b><small>Football • Kaboom chase</small><div class="product-price">$500 game cash</div><button class="btn gold box-buy" data-box="absolute">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(337 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Score Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Score Football</b><small>Football • Value box</small><div class="product-price">$160 game cash</div><button class="btn gold box-buy" data-box="score">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(16 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Chronicles Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Chronicles Football</b><small>Football • Multiple sets</small><div class="product-price">$280 game cash</div><button class="btn gold box-buy" data-box="chronicles">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(55 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Flawless Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Flawless Football</b><small>Football • High-end autos</small><div class="product-price">$2,200 game cash</div><button class="btn gold box-buy" data-box="flawless">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(94 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Select Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Select Football</b><small>Football • Concourse to Field Level</small><div class="product-price">$410 game cash</div><button class="btn gold box-buy" data-box="selectfootball">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(133 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Prizm Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Prizm Football</b><small>Football • Rookie parallels</small><div class="product-price">$520 game cash</div><button class="btn gold box-buy" data-box="prizmfootball">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(172 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Immaculate Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Immaculate Football</b><small>Football • Premium patches</small><div class="product-price">$1,100 game cash</div><button class="btn gold box-buy" data-box="immaculate">Buy & Rip</button></article>
+  <article class="product-box"><div class="product-photo"><div class="pack-art" style="display:flex;--boxaccent:hsl(211 48% 56%)"><span>FOOTBALL HOBBY</span><strong>Origins Football</strong><small>GAME PACK ART • PHOTO NOT VERIFIED</small></div></div><b>Origins Football</b><small>Football • Rookie autographs</small><div class="product-price">$340 game cash</div><button class="btn gold box-buy" data-box="origins">Buy & Rip</button></article>
+ </div>
+ <div class="box-details" style="padding:0 18px 18px">
+  <p>Every box has its own label. Only boxes with a verified matching product photo show it; others show clearly marked game pack artwork. Online photographs require internet. Pull values are simulations, not live card pricing.</p>
+  <div class="box-actions"><button class="btn" id="freePack">Open Demo Pack (Free)</button><button class="btn" id="cheatFreeBox">CHEAT: Free Box</button></div>
+  <div id="ripResults" class="rip-results"><div class="rip-empty">Choose a box to open. Cards stay within its set and year. Simulated contents; not an official checklist.</div></div>
+ </div>
+</section>
+
+
+<section class="panel" style="margin-top:17px">
+ <div class="ph"><strong>YOUR BOOTH • WALK-UP VISITORS</strong><span class="tag" id="visitorCount">VISITORS WAITING: 1</span></div>
+ <div class="visitor-layout">
+  <div class="visitor-avatar" id="visitorAvatar">JC</div>
+  <div class="visitor-copy"><b id="visitorName">Jordan Carter</b><small id="visitorType">Collector • Eagles fan</small><p id="visitorLine">Yo, I saw your booth from across the aisle. Would you sell me a card from your collection?</p><div class="visitor-offer" id="visitorOffer">Offer: $85 for a card you own</div><div class="visitor-selector"><label for="visitorCardSelect">Card on your counter</label><select id="visitorCardSelect" aria-label="Choose exact card for walk-up visitor"></select><div class="visitor-target" id="visitorTarget">Waiting for a collector...</div></div><div class="visitor-chatline"><input id="visitorChatInput" maxlength="180" placeholder="Reply to the visitor or counter with $ amount…"><button class="btn" id="visitorSend">Send</button></div><div class="visitor-transcript" id="visitorTranscript">A collector walks up to your booth. Talk price before accepting.</div></div>
+  <div class="visitor-actions"><button class="btn gold" id="visitorAccept">Make a deal</button><button class="btn" id="visitorDecline">Pass</button><button class="btn" id="visitorNext">Next visitor</button></div>
+ </div>
+ <div class="visitor-foot">Visitors are simulated game characters. Deals only apply to cards in your collection.</div>
+</section>
+<section class="panel" style="margin-top:17px">
+ <div class="ph"><strong>CREATOR CHEATS</strong><span class="tag">SINGLE-PLAYER SANDBOX</span></div>
+ <div class="cheat-area">
+  <p>For testing your game, you can enable cash and collection cheats. These only affect this browser save.</p>
+  <div class="cheat-buttons">
+   <button class="btn" id="cheatCash">+ $5,000 cash</button>
+   <button class="btn" id="cheatUnlimited">UNLIMITED CASH</button>
+   <button class="btn" id="cheatBox">Free hobby box</button>
+   <button class="btn" id="cheatCards">Add 3 rare cards</button>
+   <button class="btn" id="cheatAllBoxes">Unlock / free all boxes</button>
+   <button class="btn" id="cheatGradeAll">Grade all cards KSA 10</button>
+   <button class="btn" id="cheatTrade">Force next trade accepted</button>
+   <button class="btn" id="cheatReset">Reset game save</button>
+  </div>
+  <small class="cheat-hint">Tip: press <b>Ctrl + Shift + C</b> to jump to this cheat panel.</small>
+ </div>
+</section>
+
+
+<section class="panel grade-workshop" style="margin-top:17px">
+ <div class="ph"><strong>THE GRADING LOUNGE</strong><span class="tag">PSA • BGS • SGC • KSA</span></div>
+ <div class="grade-flex">
+  <div class="grade-slab" id="gradePreview"><div class="grade-slab-label"><span id="slabCompany">PSA</span><b id="slabGrade">?</b></div><div class="grade-slab-card"><span id="slabCardName">Select a card to submit</span></div><div class="grade-slab-footer">IN-GAME GRADING SIMULATION</div></div>
+  <div class="grade-form">
+   <p>Choose the exact card in your collection and a grading service. Results and value changes are simulated; these are <b>not actual PSA, Beckett, SGC, or KSA certifications.</b></p>
+   <label for="gradeCardSelect">Card to submit</label><select id="gradeCardSelect"></select>
+   <label for="gradeServiceSelect">Grading company</label>
+   <select id="gradeServiceSelect"><option value="PSA">PSA — $35</option><option value="BGS">Beckett / BGS — $40</option><option value="SGC">SGC — $28</option><option value="KSA">KSA — $25</option></select>
+   <div id="gradeDetails" class="grade-details">Select a card to preview its slab.</div>
+   <button id="submitGrade" class="btn gold">Submit for grading</button>
+   <div class="grade-result" id="gradeResult">Your grade reveal appears here.</div>
+  </div>
+ </div>
+</section>
+
+<div class="lower"><section class="panel"><div class="ph"><strong>YOUR COLLECTION</strong><span class="tag" id="count">0 CARDS</span></div><div class="inv" id="inventory"></div></section>
+<section class="panel"><div class="ph"><strong>HOW TO PLAY</strong><span class="tag">QUICK GUIDE</span></div><div class="guide"><b>1.</b> Pick a dealer tab to visit another table.<br><b>2.</b> Ask about condition or comps before making an offer.<br><b>3.</b> Negotiate; different dealers have different personalities and prices.<br><b>4.</b> Buy a card to add it to your collection. Cash and collection autosave in this browser.<br><b>5.</b> Play on a school computer by opening the hosted version or transferring this HTML file, if school rules allow it.</div></section></div>
+<div style="max-width:1200px;margin:0 auto;padding:0 16px 24px;color:#8798af;font-size:.72rem">Official box product photos are served from Panini America assets; the Jalen Hurts/A.J. Brown Downtown Duos image is a PSA certification photo. Images may require internet access. <a href="https://www.paniniamerica.net/" target="_blank" rel="noreferrer" style="color:#9ccfff">Panini America</a> · <a href="https://www.psacard.com/cert/123693166/psa" target="_blank" rel="noreferrer" style="color:#9ccfff">PSA card reference</a></div></main><div class="toast" id="toast"></div>
+<script>
+(()=>{
+
+const EXACT_PHOTOS = Object.freeze({
+ '2020 Panini Prizm #343 — Jalen Hurts': 'https://d1htnxwo4o0jhw.cloudfront.net/cert/140670018/small/-cPUs_L9I0Kl3a6kI1fZpw.jpg',
+ '2020 Panini Prizm #343 Jalen Hurts': 'https://d1htnxwo4o0jhw.cloudfront.net/cert/140670018/small/-cPUs_L9I0Kl3a6kI1fZpw.jpg'
+});
+function matchingPhoto(record){
+ const name=String(record.card||record.name||'');
+ return EXACT_PHOTOS[name]||'';
+}
+function showRestockedCard(c,s){
+ // Explicitly announce the new stock as a new message after the sale confirmation.
+ const line='New card on my table: '+c.card+'. I’m asking $'+s.ask+'. Want to negotiate?';
+ sayDealer(line);s.history.push({who:'dealer',text:line});
+}
+
+const catalog=[
+{id:'hurts',dealer:'Marcus Reed',initials:'MR',personality:'chill',card:'Jalen Hurts',team:'PHILADELPHIA',set:'DOWNTOWN-STYLE',parallel:'Case hit',price:780,marketValue:740,low:640,fair:700,condition:'Near Mint',estimate:'$650–$850',colors:['#164c6a','#3cba9a'],hello:'What’s good, bro? I’ve got this Jalen Hurts Downtown-style case hit at $780. Clean copy. You shopping or just looking?',conditionText:'Corners look sharp and the surface looks clean under the light. Still, inspect any card closely before buying.',compText:'For this game, the estimate is around $650–$850 depending on condition. Those are simulated numbers, not live market data.',counter:'You seem serious. I can come down to $700, but I’m not giving it away.'},
+{id:'green',dealer:'Tasha Cole',initials:'TC',personality:'confident',card:'2020 Panini Prizm #343 Jalen Hurts',team:'PHILADELPHIA',set:'2020 PANINI PRIZM',parallel:'PSA 10 EXAMPLE',price:60,marketValue:49,low:40,fair:52,condition:'PSA 10 photo example',estimate:'$42–$58',colors:['#063b25','#43db79'],hello:'Hey! I have a pictured 2020 Panini Prizm #343 Jalen Hurts PSA 10 example. My in-game asking price is $60. Interested?',conditionText:'The corners look good in this game’s inspection view. The design is fictional, and the condition is a gameplay stat—not a real authentication.',compText:'The simulated value of this card is $49, and I am asking $60. I can negotiate; this is not a verified live price.',counter:'I can do $52 in this game if you want it.'},
+{id:'basket',dealer:'DeShawn Price',initials:'DP',personality:'friendly',card:'Jalen Williams National Treasures Patch Auto',team:'OKLAHOMA CITY THUNDER',set:'NATIONAL TREASURES',parallel:'PATCH AUTO',price:145,marketValue:120,low:85,fair:125,condition:'Near Mint',estimate:'$100–$160',colors:['#4b1b76','#e1a448'],hello:'What’s good! I have a Jalen Williams National Treasures patch-auto card. I’m asking $145. Make me an offer.',conditionText:'This is a game listing. Check the actual card, certification and condition before relying on any grade.',compText:'This is a simulated $100–$160 range, not a live market quote.',counter:'I can meet you at $125 if you’re ready.'},
+{id:'baseball',dealer:'Eddie Morales',initials:'EM',personality:'careful',card:'Shohei Ohtani Chrome Refractor',team:'LOS ANGELES DODGERS',set:'CHROME REFRACTOR',parallel:'REFRACTOR',price:115,marketValue:95,low:65,fair:100,condition:'Near Mint',estimate:'$80–$130',colors:['#12365e','#65a8f2'],hello:'Hey! I’ve got a Shohei Ohtani Chrome Refractor listed at $115. If you collect baseball, let’s talk.',conditionText:'This is a game listing; inspect the actual card surface, edges, corners and centering.',compText:'The game estimate is $80–$130, not a live sold-price feed.',counter:'I can meet you at $100.'},
+{id:'hockey',dealer:'Nina Brooks',initials:'NB',personality:'playful',card:'Connor McDavid Upper Deck Young Guns',team:'EDMONTON OILERS',set:'UPPER DECK YOUNG GUNS',parallel:'ROOKIE CARD',price:330,marketValue:295,low:220,fair:300,condition:'Near Mint',estimate:'$260–$360',colors:['#073d4b','#63d4df'],hello:'Hey! I have a Connor McDavid Young Guns card on the table for $330. Want to ask about condition or make an offer?',conditionText:'This is a simulated listing. For a real card, verify the exact year, version, grade and condition.',compText:'The game range is $260–$360; it is not live market data.',counter:'I can do $300 if you’re ready to close.'}
+];
+let cash=1200, owns=[], current=0, state={};
+const $=id=>document.getElementById(id);
+
+$('cardPhotoInput').addEventListener('change',e=>{
+ const file=e.target.files&&e.target.files[0];if(!file)return;
+ if(!file.type.startsWith('image/')){toast('Choose an image file.');return}
+ const reader=new FileReader();
+ reader.onload=()=>{
+  $('uploadedCardImage').src=reader.result;
+  $('uploadedCardImage').style.display='block';
+  toast('Card photo loaded for this session. Use an image you have permission to use.');
+ };
+ reader.readAsDataURL(file);
+});
+
+function load(){try{const s=JSON.parse(localStorage.getItem('cardShowAfterHoursMulti')||'null');if(s){cash=Number(s.cash)||1200;owns=Array.isArray(s.owns)?s.owns:[];state=s.state||{}}}catch(e){}}
+function save(){try{localStorage.setItem('cardShowAfterHoursMulti',JSON.stringify({cash,owns,state}));$('saveNote').textContent='● Progress saved in this browser'}catch(e){$('saveNote').textContent='Progress lasts for this session'}}
+function dealerState(c){if(!state[c.id])state[c.id]={ask:c.price,offer:null,confidence:0,closed:false,history:[]};return state[c.id]}
+function addBubble(who,text){const b=document.createElement('div');b.className='bubble '+(who==='you'?'you':'dealer');const sm=document.createElement('small');sm.textContent=who==='you'?'YOU':catalog[current].dealer.toUpperCase();b.appendChild(sm);const t=document.createElement('div');t.textContent=text;b.appendChild(t);$('chatLog').appendChild(b);$('chatLog').scrollTop=$('chatLog').scrollHeight}
+function sayDealer(text){addBubble('dealer',text)}
+function toast(text){$('toast').textContent=text;$('toast').style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>$('toast').style.display='none',2400)}
+function update(){const c=catalog[current],s=dealerState(c);$('cash').textContent='$'+cash.toLocaleString();$('ask').textContent=s.closed?'SOLD':'$'+s.ask;$('offer').textContent=s.offer===null?'None yet':'$'+s.offer;$('condition').textContent=c.condition;$('estimate').textContent='Game value ~$'+Math.round(Number(c.marketValue)||Number(c.price)||0)+' • not live comps';$('count').textContent=owns.length+' CARD'+(owns.length===1?'':'S');$('dealerTag').textContent='DEALER '+(current+1)+' OF '+catalog.length;$('dealerName').textContent=c.dealer;$('avatar').textContent=c.initials;$('cardName').textContent=c.card.toUpperCase();$('team').textContent=c.team;$('setName').textContent=c.set;$('serial').textContent=c.parallel.toUpperCase()+' • GAME CARD';$('caseTag').textContent='CASE #'+String(current+14).padStart(3,'0');$('cardVisual').style.setProperty('--card1',c.colors[0]);$('cardVisual').style.setProperty('--card2',c.colors[1]);let cardImg=$('dealerRealCardPhoto');if(!cardImg){cardImg=document.createElement('img');cardImg.id='dealerRealCardPhoto';cardImg.alt='Real card example';cardImg.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#07101b;z-index:4;display:none';$('cardVisual').querySelector('.card-inner').appendChild(cardImg)}{const exact=matchingPhoto(c);let unverified=$('noVerifiedPhoto');if(!unverified){unverified=document.createElement('div');unverified.id='noVerifiedPhoto';unverified.style.cssText='position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:10px;text-align:center;background:linear-gradient(140deg,#0b1729,#174251,#1c253a);color:#f2e2ac;border:3px solid #b59656;border-radius:8px;font-weight:850';$('cardVisual').querySelector('.card-inner').appendChild(unverified)}if(exact){cardImg.src=exact;cardImg.style.display='block';unverified.style.display='none'}else{cardImg.removeAttribute('src');cardImg.style.display='none';unverified.style.display='flex';unverified.textContent=c.card+' — MATCHED PHOTO NOT YET AVAILABLE'}}$('actions').querySelector('[data-action="buy"]').textContent=s.closed?'Already purchased':'Buy for $'+s.ask;$('actions').querySelector('[data-action="buy"]').disabled=s.closed||owns.some(x=>x.id===c.id);renderInventory();rebuildGradeChoices();save()}
+function renderTabs(){const wrap=$('dealerTabs');wrap.innerHTML='';catalog.forEach((c,i)=>{const b=document.createElement('button');b.className='dealer-tab'+(i===current?' active':'');b.textContent=c.dealer.split(' ')[0]+' · '+c.card;b.onclick=()=>visit(i);wrap.appendChild(b)})}
+function renderInventory(){
+ const box=$('inventory');box.innerHTML='';
+ if(!owns.length){box.innerHTML='<div style="color:var(--muted)">No cards yet. Buy a single or rip a box to start your collection.</div>';return}
+ owns.forEach((c,index)=>{
+  const row=document.createElement('div');row.className='item';
+  const left=document.createElement('div');left.style.display='flex';left.style.alignItems='center';left.style.gap='9px';if(matchingPhoto(c)){const thumb=document.createElement('img');thumb.src=matchingPhoto(c);thumb.alt=c.card+' photo';thumb.loading='lazy';thumb.style.cssText='width:48px;height:64px;object-fit:contain;background:#080e18;border-radius:6px;border:1px solid #344760';left.appendChild(thumb)}const details=document.createElement('div');const name=document.createElement('b');name.textContent=c.card;
+  const small=document.createElement('small');small.textContent=c.team+' • Paid $'+(c.paid||0)+' • Reference value $'+Math.round(c.marketValue||c.paid||50)+(c.grade?' • '+(c.grader||'KSA')+' '+c.grade:'')+(c.marketLabel?' • '+c.marketLabel:'');
+  details.append(name,small);left.append(details);
+  const controls=document.createElement('div');controls.style.display='flex';controls.style.flexWrap='wrap';controls.style.gap='6px';
+  const grade=document.createElement('button');grade.className='btn';grade.textContent=c.grade?(c.grader||'KSA')+' '+c.grade:'Grade / Slab';grade.disabled=!!c.grade;grade.onclick=()=>gradeOwnedCard(index);
+  const trade=document.createElement('button');trade.className='btn';trade.textContent='Trade';trade.onclick=()=>tradeOwnedCard(index);
+  controls.append(grade,trade);
+  const pill=document.createElement('span');pill.className='pill';pill.textContent='OWNED';
+  row.append(left,controls,pill);box.append(row);
+ });
+}
+const gradeOptions={PSA:{fee:35,accent:'#ad263a',label:'PSA'},BGS:{fee:40,accent:'#1e3250',label:'BGS'},SGC:{fee:28,accent:'#111111',label:'SGC'},KSA:{fee:25,accent:'#174f80',label:'KSA'}};
+function rebuildGradeChoices(){
+ const select=$('gradeCardSelect');if(!select)return;
+ const previous=select.value;select.replaceChildren();
+ const cards=owns.filter(c=>!c.grade);
+ if(!cards.length){const opt=new Option('No ungraded cards — buy or rip a box','');select.add(opt)}
+ else cards.forEach(c=>select.add(new Option(c.card+' · $'+Math.round(Number(c.marketValue)||0),String(c.id))));
+ if(cards.some(c=>String(c.id)===previous))select.value=previous;
+ renderGradePreview();
+}
+function renderGradePreview(){
+ const c=owns.find(x=>String(x.id)===$('gradeCardSelect').value), opt=gradeOptions[$('gradeServiceSelect').value];
+ $('slabCompany').textContent=opt.label;$('slabGrade').textContent='?';
+ $('gradePreview').querySelector('.grade-slab-label').style.background=opt.accent;
+ $('slabCardName').textContent=c?c.card:'Select a card to submit';
+ $('gradeDetails').textContent='Submission '+opt.label+' · fee $'+opt.fee+' · '+(c?'Card: '+c.card:'No eligible card selected')+' · Instant simulated result.';
+}
+function submitGrading(){
+ const c=owns.find(x=>String(x.id)===$('gradeCardSelect').value);
+ const svc=$('gradeServiceSelect').value,opt=gradeOptions[svc];
+ if(!c){toast('No eligible card selected.');return}
+ if(cash<opt.fee){toast('You need $'+opt.fee+' game cash to submit.');return}
+ cash-=opt.fee;
+ const rolled=[7,8,8.5,9,9,9,9.5,10][Math.floor(Math.random()*8)];
+ const grade=svc==='PSA'||svc==='SGC'||svc==='KSA'?Math.round(rolled):rolled;
+ c.grade=grade;c.grader=svc;c.cert='GAME-'+Math.floor(Math.random()*900000+100000);
+ const factor=grade>=10?1.95:grade>=9.5?1.57:grade>=9?1.30:grade>=8?1.06:.92;
+ c.marketValue=Math.round((Number(c.marketValue)||40)*factor);
+ $('slabGrade').textContent=String(grade);$('slabCardName').textContent=c.card;
+ $('gradeResult').textContent=opt.label+' '+grade+' · '+c.card+' · '+c.cert+' (game-only label). New simulated estimate: $'+c.marketValue;
+ update();toast('Grade reveal: '+opt.label+' '+grade+'!');
+}
+function gradeOwnedCard(index){
+ const c=owns[index];if(!c||c.grade)return;
+ const service=$('gradeServiceSelect');service.value='PSA';
+ rebuildGradeChoices();$('gradeCardSelect').value=String(c.id);renderGradePreview();
+ document.querySelector('.grade-workshop').scrollIntoView({behavior:'smooth',block:'center'});
+}
+$('gradeCardSelect').addEventListener('change',renderGradePreview);
+$('gradeServiceSelect').addEventListener('change',renderGradePreview);
+$('submitGrade').addEventListener('click',submitGrading);
+function tradeOwnedCard(index){
+ const c=owns[index];if(!c)return;
+ const other=catalog[current],s=dealerState(other),v=Number(c.marketValue||c.paid||50);
+ if(s.closed){toast('That dealer table needs a new card first.');return}
+ if(v < s.ask*0.72&&!window.forceTradeAccepted){toast('Trade declined. Your card is estimated at $'+Math.round(v)+'; dealer card is listed at $'+s.ask+'.');return}
+ window.forceTradeAccepted=false;owns.splice(index,1);owns.push({id:'trade-'+Date.now(),card:other.card,team:other.team,paid:0,marketValue:other.marketValue||s.ask,grade:0,photo:matchingPhoto(other)||'',set:other.set,player:other.player});
+ const tradedFor=other.card;restockVendor(other,s);update();visit(current);toast('Trade complete! You received '+tradedFor+'.');
+}
+function visit(i){current=i;renderTabs();$('chatLog').innerHTML='';const c=catalog[current],s=dealerState(c);if(s.history.length){s.history.forEach(h=>addBubble(h.who,h.text))}else{sayDealer(c.hello);s.history.push({who:'dealer',text:c.hello})}update()}
+function reply(action){const c=catalog[current],s=dealerState(c);if(s.closed)return 'That card is already sold, my friend.';switch(action){case'condition':s.confidence++;return c.conditionText;case'comp':s.confidence++;return c.compText;case'low':s.offer=c.low;if(s.confidence>0){s.ask=c.fair;return 'I hear you. Since you asked about the card first, I’ll counter at $'+s.ask+'. That’s the best I can do.'}return 'That offer is a little light. I can come down to $'+Math.max(c.fair,s.ask-30)+', but let’s talk.';case'fair':s.offer=c.fair;s.ask=c.fair;return c.counter+' My current asking price is now $'+s.ask+'.';case'trade':{if(!owns.length)return 'I could trade, but you need a card in your collection first. Buy a single or rip a box, then come back.';const offered=owns[0];const mv=Number(offered.marketValue||offered.paid||50);if(mv>=s.ask*0.72){owns.shift();owns.push({id:'trade-'+Date.now(),card:c.card,team:c.team,paid:0,marketValue:c.marketValue||s.ask,grade:0});const oldName=c.card;restockVendor(c,s);return 'Deal! I’ll take your '+offered.card+' (game value about $'+Math.round(mv)+') for my '+oldName+'. I’ve got another card ready on my table now.';}return 'I like the card, but its estimated game value is about $'+Math.round(mv)+'. This one is priced around $'+s.ask+'. Try trading a higher-value card or offer cash instead.';}case'buy':if(cash<s.ask)return 'You have $'+cash+'. You need $'+s.ask+' to buy this card. Make an offer or visit another table.';cash-=s.ask;const bought={id:c.id+'-'+Date.now(),card:c.card,team:c.team,paid:s.ask,marketValue:c.marketValue||s.ask,grade:0,photo:matchingPhoto(c)};owns.push(bought);const boughtName=c.card;restockVendor(c,s);return 'Deal! You bought '+boughtName+' for $'+bought.paid+'. It is now in your collection.';default:return 'Ask me about condition or comps, or make an offer.'}}
+function actionClick(action){const c=catalog[current],s=dealerState(c);let userText={condition:'Can I ask about condition?',comp:'What are the comps?',low:'I’ll make a lower offer.',fair:'I can make a fair offer.',trade:'Would you take a trade?',buy:'I want to buy this card.'}[action];addBubble('you',userText);s.history.push({who:'you',text:userText});const priorCount=owns.length;const text=reply(action);sayDealer(text);s.history.push({who:'dealer',text});if(action==='buy'&&owns.length>priorCount){showRestockedCard(c,s);toast('Card purchased. '+c.dealer+' has new stock!')}else if(action==='trade'&&owns.length===priorCount&&text.startsWith('Deal!')){showRestockedCard(c,s)}renderTabs();update()}
+
+const vendorStock={
+ hurts:[
+  {card:'2020 Panini Prizm #343 Jalen Hurts',team:'PHILADELPHIA',photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/140670018/small/-cPUs_L9I0Kl3a6kI1fZpw.jpg',set:'SILVER PRIZM-STYLE',parallel:'Silver',price:145,marketValue:125,low:85,fair:115,condition:'Near Mint',estimate:'$100–$150',colors:['#26394e','#aebdca']},
+  {card:'Jalen Hurts National Treasures Patch Auto',team:'PHILADELPHIA',photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/140670018/small/-cPUs_L9I0Kl3a6kI1fZpw.jpg',set:'ROOKIE SIGNATURE',parallel:'AUTO /99',price:220,marketValue:195,low:140,fair:180,condition:'Near Mint',estimate:'$160–$230',colors:['#0c3429','#78bd9b']},
+  {card:'Jalen Hurts Donruss Downtown! example',team:'PHILADELPHIA',photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/183090272/small/LM4glYxis0W1L3KQEX7iIg.jpg',set:'COLOR MATCH',parallel:'GREEN /25',price:310,marketValue:280,low:205,fair:260,condition:'Excellent',estimate:'$230–$330',colors:['#075239','#56cb87']}
+ ],
+ green:[
+  {card:'Jayden Daniels Donruss Downtown! example',team:'ROOKIE CLASS',set:'GOLD FOIL',parallel:'GOLD /10',price:275,marketValue:245,low:175,fair:225,condition:'Near Mint',estimate:'$210–$290',colors:['#6a4817','#e9cc77']},
+  {card:'Brock Purdy National Treasures Rookie Patch Auto',team:'ROOKIE CLASS',set:'PATCH AUTO',parallel:'RPA /25',price:520,marketValue:470,low:340,fair:430,condition:'Excellent',estimate:'$390–$550',colors:['#0a4b2b','#61d68b']},
+  {card:'Michael Penix Jr. Donruss Rated Rookie',team:'ROOKIE CLASS',set:'SILVER FOIL',parallel:'SILVER /99',price:95,marketValue:80,low:55,fair:72,condition:'Near Mint',estimate:'$65–$105',colors:['#304150','#b8c8d7']}
+ ],
+ basket:[
+  {card:'Jalen Brunson Silver Parallel',team:'HOOPS • ALL-STAR',set:'COURT VISION',parallel:'SILVER',price:115,marketValue:98,low:65,fair:90,condition:'Near Mint',estimate:'$80–$125',colors:['#35216a','#c4c8ed']},
+  {card:'Victor Wembanyama Rookie Autograph example',team:'HOOPS • ROOKIE',set:'ON-CARD AUTO',parallel:'AUTO /49',price:290,marketValue:255,low:180,fair:235,condition:'Near Mint',estimate:'$215–$315',colors:['#1d315d','#d1a14f']},
+  {card:'LeBron James Gold Parallel',team:'HOOPS • ALL-STAR',set:'GOLD FOIL',parallel:'GOLD /10',price:380,marketValue:340,low:245,fair:315,condition:'Excellent',estimate:'$285–$400',colors:['#633f13','#e7c86b']}
+ ],
+ baseball:[
+  {card:'Shohei Ohtani Chrome Refractor',team:'BASEBALL • PROSPECT',set:'CHROME-STYLE',parallel:'REFRACTOR',price:75,marketValue:62,low:40,fair:55,condition:'Near Mint',estimate:'$45–$85',colors:['#163e68','#79c7ef']},
+  {card:'Aaron Judge Blue Parallel',team:'BASEBALL • PROSPECT',set:'BLUE FOIL',parallel:'BLUE /99',price:190,marketValue:165,low:115,fair:150,condition:'Very Good',estimate:'$130–$205',colors:['#103b73','#75b7ff']},
+  {card:'Shohei Ohtani Autograph example',team:'BASEBALL • ROOKIE',set:'SIGNATURE SERIES',parallel:'AUTO /25',price:245,marketValue:220,low:155,fair:200,condition:'Near Mint',estimate:'$185–$270',colors:['#123d2d','#c2d9a3']}
+ ],
+ hockey:[
+  {card:'Connor McDavid Silver Parallel',team:'HOCKEY • SIGNATURE',set:'FROZEN RINK',parallel:'SILVER',price:85,marketValue:70,low:45,fair:63,condition:'Near Mint',estimate:'$55–$95',colors:['#17445c','#9de2ec']},
+  {card:'Connor McDavid Autograph example',team:'HOCKEY • SIGNATURE',set:'ON-CARD AUTO',parallel:'AUTO /49',price:210,marketValue:185,low:130,fair:170,condition:'Near Mint',estimate:'$150–$230',colors:['#0b3e48','#76d6dc']},
+  {card:'Sidney Crosby Gold Parallel',team:'HOCKEY • ROOKIE',set:'GOLD FOIL',parallel:'GOLD /10',price:295,marketValue:265,low:190,fair:245,condition:'Excellent',estimate:'$225–$320',colors:['#5a3b13','#e7c96e']}
+ ]
+};
+function restockVendor(c,s){
+ const filter=(card)=> {
+  const sport=c.id==='basket'||c.id==='basketball'?'basket':c.id==='baseball'?'baseball':c.id==='hockey'?'hockey':'football';
+  const n=card.name.toLowerCase();
+  if(sport==='basket')return /basketball|victor wembanyama|lebron james|stephen curry|luka dončić|jayson tatum|caitlin clark|angel reese|a’ja wilson|jalen brunson|tyrese maxey|shai gilgeous/.test(n);
+  if(sport==='baseball')return /baseball|shohei ohtani|aaron judge|juan soto|mike trout|mookie betts|ronald acuña|freddie freeman|bobby witt|paul skenes|elly de la cruz|gunnar henderson|corbin carroll|julio rodríguez|adley rutschman|bryce harper/.test(n);
+  if(sport==='hockey')return /hockey|connor mcdavid|sidney crosby|auston matthews|wayne gretzky/.test(n);
+  return /football|jalen hurts|a\.j\. brown|saquon barkley|jayden daniels|caleb williams|bo nix|brock bowers|marvin harrison|michael penix|drake london|bijan robinson|patrick mahomes|travis kelce|josh allen|lamar jackson|joe burrow|justin jefferson|ja’מarr chase|c\.j\. stroud|nico collins|brock purdy|dak prescott|ceedee lamb|micah parsons|jayden reed|jordan love|jared goff|amon-ra|puka nacua|rome odunze/.test(n);
+ };
+ const next=nextUniquePull(filter);
+ const v=next||nextUniquePull();
+ Object.assign(c,{card:v.name,team:c.team||'SPORTS CARDS',set:v.type,parallel:v.type,price:Math.max(10,Math.round(v.value*1.22)),marketValue:v.value,low:Math.max(5,Math.round(v.value*.7)),fair:Math.max(8,Math.round(v.value*1.05)),condition:'Near Mint (simulated)',estimate:'Game reference $'+v.value,colors:v.colors,photo:v.photo||'',marketLabel:v.marketLabel,marketUrl:v.marketUrl,hello:'Yo, fresh card on the table: '+v.name+'. I’m asking $'+Math.max(10,Math.round(v.value*1.22))+'. Want to ask about condition, comps, or make an offer?',conditionText:'This is a simulated listing. Check the real card, exact version, grade, corners, edges and surface before trusting condition.',compText:v.marketLabel||'This is a generated game estimate, not verified market data.',counter:'I can consider a fair offer based on the card’s game estimate.'});
+ s.ask=c.price;s.offer=null;s.confidence=0;s.closed=false;s.history=[];
+ // The caller appends this after the sale confirmation, in the correct order.
+}
+
+$('actions').addEventListener('click',e=>{const b=e.target.closest('button[data-action]');if(b)actionClick(b.dataset.action)});
+function dealerBackstory(c){
+ const id=String(c.id||'')+String(c.card||'');let n=0;for(const ch of id)n=(n*31+ch.charCodeAt(0))>>>0;
+ const stories=[
+  'I picked it up in a three-card trade earlier in the show and moved a duplicate from my PC.',
+  'I bought it in a small lot from another dealer this morning. I checked the corners before putting it out.',
+  'A collector sold it to me while upgrading to a graded copy, so I gave it a spot in the display.',
+  'I pulled it from a box during a local break and decided to sell rather than hold.',
+  'I traded two midrange singles for it at a show last month. I collect this set, just not this particular parallel.'
+ ];return stories[n%stories.length];
+}
+function dealerConversation(q,c,s){
+ const l=q.toLowerCase().replace(/[’]/g,"'").trim();
+ const value=Math.max(1,Number(c.marketValue)||Number(c.price)||10),asking=Number(s.ask);
+ const name=c.dealer.split(' ')[0],card=c.card;
+ const offerMatch=l.match(/^(?:(?:i(?:'d| would| can| will|ll)?\s+)?(?:offer|pay|give(?: you)?|take|do|at|for|how about|what about|my price(?: is)?|would you accept)\s*)?\$?\s*(\d{1,6})(?:\s*(?:dollars|bucks))?\s*[?.!]*$/);
+ if(offerMatch){
+  const n=Number(offerMatch[1]);s.offer=n;
+  const floor=Math.max(1,Math.round(value*(c.personality==='careful'?.92:c.personality==='friendly'?.77:.82)));
+  if(n>=asking)return 'For '+card+'? That meets my $'+asking+' asking price. Hit Buy and it’s yours.';
+  if(n>=floor){s.ask=n;return 'I like $'+n+' on '+card+'. Deal if you want it—my price is updated.'}
+  return '$'+n+' is a little light for '+card+'. I can meet you at $'+floor+'. How about that?';
+ }
+ if(/where.*(get|buy|find|pick|source|come from)|how.*(get|acquir|find|end up)|who.*(sold|traded|gave)|provenance|from where/.test(l)){
+  return 'Good question about '+card+'. '+dealerBackstory(c)+' That is a fictional dealer backstory for this game, not proof of real ownership. Want to look at the condition or negotiate?';
+ }
+ if(/why.*(want|buy|collect|like|interested)|what.*(looking for|collect|want)|are you buying/.test(l)){
+  return 'I mainly chase '+(c.id==='basket'?'basketball stars':c.id==='baseball'?'baseball rookies':c.id==='hockey'?'Young Guns and hockey autos':'football rookies, Eagles singles, and short prints')+'. I’m moving '+card+' because it doesn’t fit my current PC. Got any cards you’re looking to trade?';
+ }
+ if(/why|reason|how come|explain|too low|so low|so cheap|selling for|asking for|price so|price is|worth so much|worth less/.test(l)){
+  const ratio=asking/value,position=ratio<.9?'below':ratio>1.1?'above':'close to';
+  const reasons=['I’m freeing up cash for another pickup.','I’d rather move inventory than hold every card.','I have a duplicate in my personal collection.','I am pricing to move cards before the show ends.'];
+  return 'I have '+card+' at $'+asking+', which is '+position+' the game estimate of $'+value+'. '+reasons[(card.length+name.length)%reasons.length]+' The value is simulated, not a live sold comp.';
+ }
+ if(/favorite|collect|pc\b|team|player/.test(l)&&!/where/.test(l))return 'I collect mostly '+c.team+'. Right now my showcase card is '+card+'. What player are you chasing?';
+ if(/comp|recent sales|sales|market|worth|value|price guide/.test(l))return 'On '+card+', the game estimates $'+value+'. My current ask is $'+asking+'. These are not verified sales for the exact card—check the year, card number and grade for a real comp.';
+ if(/condition|scratch|corner|edge|surface|centering|grade|damage|clean/.test(l))return 'For '+card+', the game lists '+c.condition+'. The corners and surface need a close look; I wouldn’t call any ungraded card a PSA 10 just by looking at the photo.';
+ if(/trade|swap|exchange/.test(l))return 'I’m open to a trade for '+card+'. Use Trade on a specific card in your collection; I’ll compare its game value with my current $'+asking+' asking price.';
+ if(/best|lowest|firm|discount|come down|do better|negotiate/.test(l)){const floor=Math.max(1,Math.round(value*.84));return 'For '+card+', I’m asking $'+asking+'. Best I can consider is about $'+Math.min(asking,floor)+'. Throw me a number.'}
+ if(/hi\b|hey|hello|what's up|whats up|sup\b|yo\b/.test(l))return 'Hey! I’m '+name+'. I’ve got '+card+' on the counter for $'+asking+'. Are you collecting this player or flipping?';
+ if(/buy|deal|take it|i want it/.test(l))return 'We can close '+card+' at $'+asking+'. Hit Buy and I’ll put out a new single right after.';
+ if(/picture|photo|image|look|see/.test(l))return matchingPhoto(c)?'There’s a matching photo example in the left showcase. Check that it’s the correct version and grade.':'No verified matching photograph is attached to this exact card, so I won’t show a different card pretending it’s the same.';
+ if(/how long|how much time|when did/.test(l))return 'I’ve been dealing at shows for a few seasons in the game. '+dealerBackstory(c);
+ return 'I hear you about '+card+'. Ask me where I found it, why I’m moving it, about its condition, or name a price you’d pay. I’ll work with you.';
+}
+$('chatForm').addEventListener('submit',e=>{
+ e.preventDefault();const input=$('chatInput');const q=input.value.trim();if(!q)return;input.value='';
+ addBubble('you',q);const c=catalog[current],s=dealerState(c);s.history.push({who:'you',text:q});
+ const ans=dealerConversation(q,c,s);sayDealer(ans);s.history.push({who:'dealer',text:ans});update();$('chatLog').scrollTop=$('chatLog').scrollHeight;
+});
+function escapeText(s){return s}
+
+
+
+const playerNames=[
+'Jalen Hurts','A.J. Brown','Saquon Barkley','DeVonta Smith','Jayden Daniels','Caleb Williams','Bo Nix','Brock Bowers','Marvin Harrison Jr.','Michael Penix Jr.','Drake London','Bijan Robinson','Patrick Mahomes II','Travis Kelce','Josh Allen','Lamar Jackson','Joe Burrow','Justin Jefferson','Ja’Marr Chase','C.J. Stroud','Brock Purdy','Christian McCaffrey','Dak Prescott','CeeDee Lamb','Rome Odunze','Shohei Ohtani','Aaron Judge','Juan Soto','Mike Trout','Mookie Betts','Ronald Acuña Jr.','Freddie Freeman','Bobby Witt Jr.','Paul Skenes','Elly De La Cruz','Bryce Harper','Victor Wembanyama','LeBron James','Stephen Curry','Luka Dončić','Jayson Tatum','Anthony Edwards','Shai Gilgeous-Alexander','Joel Embiid','Tyrese Maxey','Jalen Brunson','Caitlin Clark','Angel Reese','Connor McDavid','Sidney Crosby','Auston Matthews','Lionel Messi','Cristiano Ronaldo','Kylian Mbappé','Erling Haaland','Lamine Yamal'
+];
+const productSets=['Donruss','Donruss Optic','Prizm','Select','Mosaic','National Treasures','Contenders','Absolute','Chronicles','Score','Topps Chrome','Bowman Chrome','Upper Deck'];
+const cardTypes=['Base','Rated Rookie','Silver Prizm','Refractor','Insert','Rookie Autograph','Patch Autograph','Jersey Relic','Gold Parallel /10','Blue Parallel /99','Red Parallel /25','One-of-One'];
+const years=['2020','2021','2022','2023','2024','2025','2025-26'];
+const pullPool=[
+ {name:'2023 Donruss Downtown! — Jalen Hurts #D-5',type:'CASE HIT • DOWNTOWN!',value:475,marketLabel:'Price guide reference; exact raw/graded comps vary',marketUrl:'https://www.sportscardspro.com/game/football-cards-2023-panini-donruss-downtown/jalen-hurts-d-5',colors:['#143e58','#a87d3d'],rare:9,photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/154151659/small/oQQSpj4p2ECt7B-OJXNDjg.jpg',player:'Jalen Hurts'},
+ {name:'2024 Donruss Optic Downtown Duos — Jalen Hurts / A.J. Brown',type:'CASE HIT • DOWNTOWN DUOS',value:575,marketLabel:'Exact card/grade comps need verification',marketUrl:'https://www.psacard.com/',colors:['#06482b','#56db9a'],rare:9,photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/183090272/small/LM4glYxis0W1L3KQEX7iIg.jpg',player:'Jalen Hurts / A.J. Brown'},
+ {name:'2020 Panini Prizm #343 — Jalen Hurts',type:'ROOKIE CARD',value:49,marketLabel:'Price reference; verify parallel and grade',marketUrl:'https://www.psacard.com/cert/75483862/psa',colors:['#203957','#6e94bd'],rare:5,photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/140670018/small/-cPUs_L9I0Kl3a6kI1fZpw.jpg',player:'Jalen Hurts'},
+ {name:'2024 Panini National Treasures — Jalen Hurts Emerald #79 /99',type:'NATIONAL TREASURES • /99',value:12,marketLabel:'Reference listing; verify exact parallel and sale date',marketUrl:'https://www.sportscardspro.com/game/football-cards-2024-panini-national-treasures/jalen-hurts-emerald-79',colors:['#6c4814','#e7ca75'],rare:3,photo:'',player:'Jalen Hurts'},
+ {name:'2024 Donruss Rated Rookie — Jayden Daniels',type:'RATED ROOKIE',value:8,marketLabel:'Game estimate only; exact card number/parallel needed',marketUrl:'https://www.paniniamerica.net/cards',colors:['#253c5a','#b6cbe2'],rare:2,photo:'',player:'Jayden Daniels'},
+ {name:'2024 Donruss Rated Rookie — Caleb Williams',type:'RATED ROOKIE',value:8,marketLabel:'Game estimate only; exact card number/parallel needed',marketUrl:'https://www.paniniamerica.net/cards',colors:['#391c18','#e5c16d'],rare:2,photo:'',player:'Caleb Williams'},
+ {name:'2024 Donruss Rated Rookie — Bo Nix',type:'RATED ROOKIE',value:7,marketLabel:'Game estimate only; exact card number/parallel needed',marketUrl:'https://www.paniniamerica.net/cards',colors:['#24314f','#8b9fe5'],rare:2,photo:'',player:'Bo Nix'},
+ {name:'2024 Donruss Rated Rookie — Brock Bowers',type:'RATED ROOKIE',value:6,marketLabel:'Game estimate only; exact card number/parallel needed',marketUrl:'https://www.paniniamerica.net/cards',colors:['#502328','#d47c7c'],rare:2,photo:'',player:'Brock Bowers'},
+ {name:'2024 Donruss Rated Rookie — Marvin Harrison Jr.',type:'RATED ROOKIE',value:6,marketLabel:'Game estimate only; exact card number/parallel needed',marketUrl:'https://www.paniniamerica.net/cards',colors:['#3c4654','#c9d4e0'],rare:2,photo:'',player:'Marvin Harrison Jr.'},
+ {name:'2024 Donruss Rated Rookie — Michael Penix Jr.',type:'RATED ROOKIE',value:5,marketLabel:'Game estimate only; exact card number/parallel needed',marketUrl:'https://www.paniniamerica.net/cards',colors:['#304150','#b8c8d7'],rare:2,photo:'',player:'Michael Penix Jr.'},
+ {name:'2024 Donruss — Saquon Barkley',type:'BASE VETERAN',value:2,marketLabel:'Game estimate only; exact version needed',marketUrl:'https://www.paniniamerica.net/cards',colors:['#063b25','#b8d3c0'],rare:1,photo:'',player:'Saquon Barkley'},
+ {name:'2024 Donruss — A.J. Brown',type:'BASE VETERAN',value:3,marketLabel:'Game estimate only; exact version needed',marketUrl:'https://www.paniniamerica.net/cards',colors:['#1d315d','#d1a14f'],rare:1,photo:'',player:'A.J. Brown'},
+ {name:'2025 Topps Chrome — Shohei Ohtani',type:'CHROME BASE',value:5,marketLabel:'Game estimate only; exact card/parallel needed',marketUrl:'https://www.topps.com/',colors:['#12365e','#65a8f2'],rare:1,photo:'',player:'Shohei Ohtani'},
+ {name:'2025 Topps Chrome — Aaron Judge',type:'CHROME BASE',value:5,marketLabel:'Game estimate only; exact card/parallel needed',marketUrl:'https://www.topps.com/',colors:['#12365e','#65a8f2'],rare:1,photo:'',player:'Aaron Judge'},
+ {name:'2024-25 Panini Prizm — Victor Wembanyama',type:'PRIZM BASE',value:8,marketLabel:'Game estimate only; exact card/parallel needed',marketUrl:'https://www.paniniamerica.net/cards/trading-cards/basketball',colors:['#26384a','#b8c8d7'],rare:1,photo:'',player:'Victor Wembanyama'},
+ {name:'2024-25 Panini Prizm — LeBron James',type:'PRIZM BASE',value:5,marketLabel:'Game estimate only; exact card/parallel needed',marketUrl:'https://www.paniniamerica.net/cards/trading-cards/basketball',colors:['#26384a','#b8c8d7'],rare:1,photo:'',player:'LeBron James'},
+ {name:'2024-25 Panini Prizm — Stephen Curry',type:'PRIZM BASE',value:5,marketLabel:'Game estimate only; exact card/parallel needed',marketUrl:'https://www.paniniamerica.net/cards/trading-cards/basketball',colors:['#26384a','#b8c8d7'],rare:1,photo:'',player:'Stephen Curry'},
+ {name:'2025 Topps Chrome — Lionel Messi',type:'CHROME BASE',value:7,marketLabel:'Game estimate only; exact card/parallel needed',marketUrl:'https://www.topps.com/',colors:['#174d2b','#d4bd80'],rare:1,photo:'',player:'Lionel Messi'},
+ {name:'2025 Upper Deck — Connor McDavid',type:'BASE VETERAN',value:6,marketLabel:'Game estimate only; exact card/parallel needed',marketUrl:'https://upperdeck.com/',colors:['#073d4b','#63d4df'],rare:1,photo:'',player:'Connor McDavid'}
+];
+const generatedCatalog=[];
+for(const player of playerNames) for(const set of productSets) for(const type of cardTypes) for(const year of years){
+ if(generatedCatalog.length>=30000)break;
+ const name=year+' '+set+' — '+player+' — '+type;
+ const rarity=/One-of-One/.test(type)?8:/Autograph|Patch|Relic|Numbered/.test(type)?5:1;
+ const value=rarity>=8?Math.round(150+Math.random()*850):rarity>=5?Math.round(20+Math.random()*380):Math.round(1+Math.random()*65);
+ generatedCatalog.push({name,type,value,marketLabel:'Generated game estimate — not a verified real checklist item or sold comp',marketUrl:'https://www.sportscardspro.com/',colors:['#19334c','#b18b43'],rare:rarity,photo:'',player});
+}
+const allCardCatalog=[...pullPool,...generatedCatalog];
+let pullCursor=0;
+const usedPullNames=new Set();
+function nextUniquePull(filterFn){
+ const list=allCardCatalog.filter(filterFn||(()=>true));
+ for(let i=0;i<list.length;i++){
+  const c=list[(pullCursor+i)%list.length];
+  if(!usedPullNames.has(c.name)){usedPullNames.add(c.name);pullCursor=(pullCursor+i+1)%list.length;return c}
+ }
+ // If all are used, reset only after exhausting the whole pool.
+ usedPullNames.clear();
+ const c=list[pullCursor%list.length];usedPullNames.add(c.name);pullCursor=(pullCursor+1)%list.length;return c;
+}
+// Each product has an isolated game-only card pool. No cross-product pulls.
+// These are simulated card concepts, NOT verified manufacturer checklists or real odds.
+const productRules = {
+ nt:{year:'2024',set:'Panini National Treasures Football',tier:'premium',types:['Base /99','Colossal Jersey /49','Treasure Chest Relic /25','Rookie Patch Autograph /99','Rookie Patch Autograph /25','Gold Parallel /10','Platinum One-of-One'],price:1500,count:10},
+ donruss:{year:'2026',set:'Panini Donruss Football',tier:'standard',types:['Base','Rated Rookie','Press Proof Blue','Press Proof Gold /50','Elite Series Insert','Downtown! Case Hit'],price:450,count:8},
+ blaster:{year:'2026',set:'Panini Donruss Football',tier:'budget',types:['Base','Rated Rookie','Press Proof','Gridiron Kings Insert','Elite Series Insert'],price:120,count:6},
+ toppschrome:{year:'2025',set:'Topps Chrome Football',tier:'premium',types:['Base Chrome','Refractor','X-Fractor','Purple Refractor /250','Gold Refractor /50','Autograph','Superfractor One-of-One'],price:500,count:8},
+ toppsblack:{year:'2025',set:'Topps Chrome Black Football',tier:'premium',types:['Base Chrome Black','Black Refractor','Refractor /199','Blue Refractor /75','Gold Refractor /50','Encased Autograph','Superfractor One-of-One'],price:650,count:6},
+ toppsflagship:{year:'2026',set:'Topps Football',tier:'standard',types:['Base','Rookie','Gold Parallel /2026','Rainbow Foil','Team Color Parallel','Autograph','One-of-One Foilfractor'],price:275,count:8},
+ cosmic:{year:'2025',set:'Topps Cosmic Chrome Football',tier:'premium',types:['Base Cosmic','Galaxy Refractor','Stellar Refractor','Nebula /99','Gold /50','Cosmic Autograph','One-of-One Superfractor'],price:600,count:8},
+ sapphire:{year:'2025',set:'Topps Chrome Sapphire Football',tier:'premium',types:['Base Sapphire','Sapphire Refractor','Orange Sapphire /25','Gold Sapphire /10','Red Sapphire /5','Sapphire One-of-One'],price:1250,count:8},
+ optic:{year:'2025',set:'Panini Donruss Optic Football',tier:'premium',types:['Base Optic','Rated Rookie Optic','Holo','Blue /99','Gold /10','Downtown! Case Hit'],price:550,count:8},
+ paniniblack:{year:'2025',set:'Panini Black Football',tier:'premium',types:['Base Black','Futuristic Jersey /99','Rookie Patch Autograph /99','Sizable Signatures /50','Gold Autograph /10','One-of-One Black Finite'],price:700,count:6},
+ mosaic:{year:'2025',set:'Panini Mosaic Football',tier:'standard',types:['Base Mosaic','Silver Mosaic','Reactive Orange','Blue /99','Stained Glass Insert','Gold /10'],price:400,count:8},
+ contenders:{year:'2025',set:'Panini Contenders Football',tier:'standard',types:['Base','Rookie Ticket Autograph','Playoff Ticket /99','Championship Ticket /49','Cracked Ice /22','Super Bowl Ticket One-of-One'],price:350,count:8},
+ absolute:{year:'2025',set:'Panini Absolute Football',tier:'premium',types:['Base','Rookie Premier Materials /99','Spectrum /50','Gold /10','Explosive Insert','Kaboom! Case Hit'],price:500,count:8},
+ score:{year:'2025',set:'Panini Score Football',tier:'budget',types:['Base','Rookie','Gold Zone /50','Showtime Insert','Artist Proof /35','Autograph'],price:160,count:8},
+ chronicles:{year:'2025',set:'Panini Chronicles Football',tier:'standard',types:['Chronicles Base','Rookie','Silver Parallel','Numbered Parallel /99','Autograph','Gold /10'],price:280,count:8},
+ flawless:{year:'2025',set:'Panini Flawless Football',tier:'premium',types:['Base /20','Diamond /20','Ruby /15','Patch Autograph /25','Dual Autograph /10','One-of-One Platinum'],price:2200,count:5},
+ selectfootball:{year:'2025',set:'Panini Select Football',tier:'standard',types:['Concourse Base','Premier Level','Club Level','Field Level','Silver Prizm','Tie-Dye /25','Gold /10','Zebra SSP'],price:410,count:8},
+ prizmfootball:{year:'2025',set:'Panini Prizm Football',tier:'standard',types:['Base','Rookie','Silver Prizm','Red Wave /149','Blue Ice /99','Gold Prizm /10','Color Blast SSP'],price:520,count:8},
+ immaculate:{year:'2025',set:'Panini Immaculate Football',tier:'premium',types:['Base /99','Premium Patch /50','Rookie Patch Autograph /99','Premium Patch Auto /25','Nike Swoosh /2','One-of-One Shield'],price:1100,count:6},
+ origins:{year:'2025',set:'Panini Origins Football',tier:'standard',types:['Base','Rookie','Rookie Jumbo Patch Autograph','On-Card Rookie Auto','Gold /10','One-of-One'],price:340,count:7}
+};
+const footballVeterans=['Jalen Hurts','Saquon Barkley','A.J. Brown','DeVonta Smith','Patrick Mahomes II','Josh Allen','Lamar Jackson','Joe Burrow','Justin Jefferson','Ja’Marr Chase','C.J. Stroud','Brock Purdy','George Kittle','Christian McCaffrey','Dak Prescott','CeeDee Lamb','Puka Nacua','Jared Goff','Amon-Ra St. Brown','Jordan Love','Justin Herbert','Tua Tagovailoa','Derrick Henry','Tyreek Hill','Micah Parsons','Nico Collins','Bijan Robinson','Breece Hall','Garrett Wilson'];
+const footballRookies2024=['Jayden Daniels','Caleb Williams','Bo Nix','Michael Penix Jr.','Marvin Harrison Jr.','Brock Bowers','Rome Odunze','Malik Nabers','Brian Thomas Jr.','Ladd McConkey','Keon Coleman','Xavier Worthy'];
+const footballRookies2025=['Cam Ward','Travis Hunter','Ashton Jeanty','Jaxson Dart','Tetairoa McMillan','Emeka Egbuka','Omarion Hampton','Tyler Warren','Colston Loveland','Matthew Golden','Abdul Carter'];
+const boxUsedNames = {};
+function gameCardForBox(boxType, box){
+ const year=box.year;
+ const rookiePool=year==='2024'?footballRookies2024:year==='2025'?footballRookies2025:[];
+ const eligible=[...footballVeterans,...rookiePool];
+ const availableTypes=year==='2026'?box.types.filter(t=>!/Rated Rookie|Rookie|RPA/i.test(t)):box.types;
+ if(!boxUsedNames[boxType])boxUsedNames[boxType]=new Set();
+ const used=boxUsedNames[boxType];
+ const maxOptions=eligible.length*availableTypes.length;
+ if(used.size>=maxOptions)used.clear();
+ let item=null;
+ for(let tries=0;tries<160;tries++){
+  let player=eligible[Math.floor(Math.random()*eligible.length)];
+  // Case hits remain rare; ordinary cards are far more likely.
+  let roll=Math.random();
+  let index=roll<.72?Math.floor(Math.random()*Math.min(2,availableTypes.length)):
+    roll<.965?Math.floor(Math.random()*availableTypes.length):availableTypes.length-1;
+  let type=availableTypes[index];
+  if(/Rookie|RPA/i.test(type))player=rookiePool[Math.floor(Math.random()*rookiePool.length)];
+  const name=year+' '+box.set+' — '+player+' — '+type;
+  if(!used.has(name)){used.add(name);item={name,player,type};break}
+ }
+ if(!item){const player=eligible[Math.floor(Math.random()*eligible.length)];const type=availableTypes[Math.floor(Math.random()*availableTypes.length)];item={name:year+' '+box.set+' — '+player+' — '+type,player,type};used.add(item.name)}
+ const chase=/One-of-One|Superfractor|Kaboom|Downtown|Color Blast|Shield|SSP/i.test(item.type);
+ const mid=/Autograph|Gold|Patch|Refractor|Silver|Zebra|Tie-Dye|Numbered|Ticket/i.test(item.type);
+ let value=Math.round(chase?150+Math.random()*1100:mid?20+Math.random()*210:2+Math.random()*65);
+ if(box.tier==='premium')value=Math.round(value*1.35);
+ if(['Patrick Mahomes II','Jalen Hurts','Jayden Daniels','Cam Ward','Travis Hunter'].includes(item.player))value=Math.round(value*1.3);
+ return {...item,value,photo:'',marketLabel:'SIMULATED card and value — exact checklist and odds NOT verified',marketUrl:'',year,set:box.set,productKey:boxType,colors:['#13283f','#8c7247']};
+}
+function openBox(free,boxType='donruss'){
+ const box=productRules[boxType];
+ if(!box){toast('That product is not configured. No money charged.');return}
+ if(!free && cash<box.price){toast('Not enough game cash for '+box.set+'. Try the cheat menu.');return}
+ const pulls=Array.from({length:box.count},()=>gameCardForBox(boxType,box));
+ // Check product AND release year, before spending money or adding cards.
+ if(pulls.some(c=>c.productKey!==boxType || c.year!==box.year || c.set!==box.set)){
+  toast('Product checklist mismatch; opening cancelled. No money spent.');return;
+ }
+ if(!free)cash-=box.price;
+ const results=$('ripResults');results.replaceChildren();
+ const headline=document.createElement('div');headline.className='rip-empty';
+ headline.textContent='OPENING: '+box.year+' '+box.set+' — '+pulls.length+' simulated cards. Every pull comes from this product only.';
+ results.appendChild(headline);
+ pulls.forEach((c,i)=>{
+  const el=document.createElement('div');el.className='pull';
+  const art=document.createElement('div');art.className='pull-art';art.style.setProperty('--p1',c.colors[0]);art.style.setProperty('--p2',c.colors[1]);
+  art.style.whiteSpace='pre-line';art.style.fontSize='.88rem';art.style.textAlign='center';
+  art.textContent=c.player+'\n'+c.type+'\n'+c.year+' '+c.set;
+  const name=document.createElement('b');name.textContent=c.name;
+  const small=document.createElement('small');small.textContent=box.year+' '+box.set+' · Pull '+(i+1);
+  const value=document.createElement('span');value.className='value';value.textContent='Simulated game value: $'+c.value.toLocaleString();
+  const note=document.createElement('small');note.className='pull-comp';note.textContent='No verified exact-card photo or sold comp attached';
+  el.append(art,name,small,value,note);results.appendChild(el);
+  owns.push({id:'pull-'+Date.now()+'-'+i+'-'+boxType,card:c.name,team:'FOOTBALL',paid:0,marketValue:c.value,grade:0,photo:'',player:c.player,year:c.year,set:c.set,productKey:boxType,marketLabel:c.marketLabel});
+ });
+ update();save();
+ toast((free?'Free box opened: ':'Box opened: ')+box.set+'. '+pulls.length+' product-matched cards added.');
+}
+document.querySelectorAll('.box-buy').forEach(b=>b.addEventListener('click',()=>openBox(false,b.dataset.box)));
+$('freePack').addEventListener('click',()=>openBox(true,'donruss'));
+$('cheatFreeBox').addEventListener('click',()=>openBox(true,'nt'));
+$('showRealCard').addEventListener('click',()=>{
+ const img=$('officialCardPhoto');img.style.display=img.style.display==='block'?'none':'block';
+ toast(img.style.display==='block'?'Showing actual graded-card photo online.':'Showing the game card artwork.');
+});
+
+
+
+const visitors=[
+ {name:'Jordan Carter',initials:'JC',type:'Collector • Eagles fan',line:'Yo, I saw your booth from across the aisle. Would you sell me a card from your collection?',offer:85},
+ {name:'Avery Brooks',initials:'AB',type:'Set builder • Basketball',line:'I’m hunting for something numbered. Got a card you’d be willing to move?',offer:120},
+ {name:'Malik Thompson',initials:'MT',type:'Rookie chaser • Football',line:'That booth looks clean! I’m buying today. Got any football cards for sale?',offer:165},
+ {name:'Sofia Reyes',initials:'SR',type:'Graded-card collector',line:'I collect slabs and rare parallels. I can pay a fair game price for one of your cards.',offer:210},
+ {name:'Chris Miller',initials:'CM',type:'Young collector • Baseball',line:'I’m trying to grow my collection. Got anything affordable I could buy?',offer:45},
+ {name:'Taylor Price',initials:'TP',type:'High-end buyer • Multi-sport',line:'I’ve got cash ready. Show me something interesting from your collection.',offer:275}
+];
+let visitorIndex=0;let visitorCounter=null;
+const visitorPreferences={
+ 'Jordan Carter':['Jalen Hurts','A.J. Brown','Saquon Barkley','DeVonta Smith'],
+ 'Avery Brooks':['Jalen Brunson','Victor Wembanyama','Stephen Curry','LeBron James'],
+ 'Malik Thompson':['Jayden Daniels','Caleb Williams','Bo Nix','Brock Bowers'],
+ 'Sofia Reyes':['Jalen Hurts','Patrick Mahomes II','Joe Burrow'],
+ 'Chris Miller':['Shohei Ohtani','Aaron Judge','Juan Soto'],
+ 'Taylor Price':['Jalen Hurts','Lamar Jackson','Josh Allen','Justin Jefferson']
+};
+function visitorCard(){const id=$('visitorCardSelect').value;return owns.find(x=>String(x.id)===id)}
+function presentVisitorCard(){
+ const v=visitors[visitorIndex%visitors.length],card=visitorCard();
+ if(!card){visitorCounter=null;$('visitorTarget').textContent=v.name+' wants '+visitorPreferences[v.name].join(', ')+' and will consider other good singles.';$('visitorOffer').textContent='You need a card in your collection first.';$('visitorTranscript').textContent=v.name+': Show me what you’ve got.';return}
+ const wanted=visitorPreferences[v.name].some(p=>card.card.toLowerCase().includes(p.toLowerCase()));
+ const market=Math.max(1,Number(card.marketValue)||Number(card.paid)||25);
+ visitorCounter=Math.max(1,Math.round(market*(wanted?.88:.69)));
+ $('visitorTarget').textContent=v.name+' is '+(wanted?'chasing this player!':'not specifically chasing this player, but may buy')+' · '+card.card+' · '+(card.set||'Set unspecified');
+ $('visitorOffer').textContent='Opening offer: $'+visitorCounter+' for '+card.card;
+ $('visitorTranscript').textContent=v.name+': '+(wanted?'That’s the player I’ve been looking for! ':'Not my main chase, but I’ll consider it. ')+ 'I could start at $'+visitorCounter+' for your '+card.card+'. What are you asking?';
+}
+function refreshVisitorChoices(){
+ const select=$('visitorCardSelect'),previous=select.value;select.replaceChildren();
+ if(!owns.length)select.add(new Option('No cards in collection',''));
+ owns.forEach(c=>select.add(new Option(c.card+' · estimated $'+Math.round(Number(c.marketValue)||0),String(c.id))));
+ if(owns.some(c=>String(c.id)===previous))select.value=previous;
+ presentVisitorCard();
+}
+function showVisitor(){
+ const v=visitors[visitorIndex%visitors.length];
+ $('visitorName').textContent=v.name;$('visitorAvatar').textContent=v.initials;$('visitorType').textContent=v.type;
+ $('visitorLine').textContent=v.line;
+ $('visitorCount').textContent='VISITOR '+(visitorIndex+1)+' · Looking for '+visitorPreferences[v.name].slice(0,2).join(' / ');
+ refreshVisitorChoices();
+}
+$('visitorCardSelect').addEventListener('change',presentVisitorCard);
+function answerVisitor(){
+ const input=$('visitorChatInput'),q=input.value.trim();if(!q)return;input.value='';
+ const v=visitors[visitorIndex%visitors.length],card=visitorCard();
+ if(!card){$('visitorTranscript').textContent=v.name+': Let me see your collection first.';return}
+ const estimate=Math.max(1,Number(card.marketValue)||Number(card.paid)||25),l=q.toLowerCase();
+ const offered=q.match(/(?:^|\s)\$?(\d{1,6})(?:\s|$)/);
+ if(offered){
+  const amount=Number(offered[1]);const interested=visitorPreferences[v.name].some(p=>card.card.toLowerCase().includes(p.toLowerCase()));
+  const limit=Math.round(estimate*(interested?1.07:.87)),minimum=Math.max(1,Math.round(estimate*.45));
+  if(amount<=limit&&amount>=minimum){visitorCounter=amount;$('visitorOffer').textContent='Agreed price: $'+amount+' for '+card.card;$('visitorTranscript').textContent=v.name+': $'+amount+' for your '+card.card+'? I’m good with that. Hit Make a deal when you’re ready.'}
+  else if(amount>limit){visitorCounter=limit;$('visitorOffer').textContent='Counteroffer: $'+limit+' for '+card.card;$('visitorTranscript').textContent=v.name+': I want the '+card.card+', but $'+amount+' is beyond my budget. Best I can do is $'+limit+'.'}
+  else{$('visitorTranscript').textContent=v.name+': I’d actually pay more than $'+amount+' for '+card.card+'. I’m at $'+visitorCounter+' if you want it.'}
+  return;
+ }
+ if(/why|want|looking|chasing|player|collect/.test(l))$('visitorTranscript').textContent=v.name+': My chase list is '+visitorPreferences[v.name].join(', ')+'. '+card.card+' '+(visitorPreferences[v.name].some(x=>card.card.includes(x))?'is a match!':'is outside my usual PC, but I might still take it.');
+ else if(/where|buy|got|pull/.test(l))$('visitorTranscript').textContent=v.name+': Where did you pick up '+card.card+'? I’d love to know before paying $'+visitorCounter+'.';
+ else if(/condition|grade|surface|corners/.test(l))$('visitorTranscript').textContent=v.name+': I’m buying '+card.card+'. If it’s raw, I want to check corners and surface. '+(card.grade?'I see the simulated '+(card.grader||'KSA')+' '+card.grade+' grade.':'Does it look clean to you?');
+ else if(/best|more|higher|low|price|offer/.test(l))$('visitorTranscript').textContent=v.name+': My current number for '+card.card+' is $'+visitorCounter+'. Name your price and let’s see if we can agree.';
+ else $('visitorTranscript').textContent=v.name+': I’m talking about your '+card.card+'. I can offer $'+visitorCounter+'. Tell me what you want for it, or ask who I collect.';
+}
+$('visitorSend').addEventListener('click',answerVisitor);
+$('visitorChatInput').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();answerVisitor()}});
+$('visitorNext').addEventListener('click',()=>{visitorIndex++;showVisitor();toast('A different collector has approached your booth.')});
+$('visitorDecline').addEventListener('click',()=>{const v=visitors[visitorIndex%visitors.length];toast(v.name+' moved on.');visitorIndex++;showVisitor()});
+$('visitorAccept').addEventListener('click',()=>{
+ const card=visitorCard();if(!card){toast('Pick an exact card in your collection.');return}
+ const v=visitors[visitorIndex%visitors.length],price=Math.max(1,Number(visitorCounter)||0);
+ cash+=price;owns.splice(owns.indexOf(card),1);
+ toast(v.name+' bought '+card.card+' for $'+price+'!');
+ visitorIndex++;update();showVisitor();
+});
+
+$('cheatUnlimited').addEventListener('click',()=>{cash=999999999;update();toast('Unlimited cash enabled!')});
+$('cheatAllBoxes').addEventListener('click',()=>{cash=999999999;update();openBox(true,'nt');toast('All box types unlocked and free for this session!')});
+$('cheatGradeAll').addEventListener('click',()=>{owns.forEach(c=>{c.grade=10;c.marketValue=Math.max(100,Math.round((c.marketValue||c.paid||50)*2))});update();toast('All collection cards graded KSA 10!')});
+$('cheatTrade').addEventListener('click',()=>{window.forceTradeAccepted=true;toast('Next eligible trade will be accepted.')});
+
+$('cheatCash').addEventListener('click',()=>{cash+=5000;update();toast('Cheat activated: +$5,000 cash.')});
+$('cheatBox').addEventListener('click',()=>openBox(true));
+$('cheatCards').addEventListener('click',()=>{
+ const rare=[{card:'Jalen Hurts Downtown! (photo example)',team:'PHILADELPHIA EAGLES',paid:0,photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/183090272/small/LM4glYxis0W1L3KQEX7iIg.jpg'},{card:'2020 Panini Prizm #343 Jalen Hurts PSA 10',team:'PHILADELPHIA EAGLES',paid:0,photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/140670018/small/-cPUs_L9I0Kl3a6kI1fZpw.jpg'},{card:'2024 Downtown Duos Jalen Hurts / A.J. Brown',team:'PHILADELPHIA EAGLES',paid:0,photo:'https://d1htnxwo4o0jhw.cloudfront.net/cert/183090272/small/LM4glYxis0W1L3KQEX7iIg.jpg'}];
+ rare.forEach((c,i)=>owns.push({id:'cheat-'+Date.now()+'-'+i,...c,marketValue:[1800,700,450][i],grade:0}));
+ update();toast('Three rare game cards added to your collection.')
+});
+$('cheatReset').addEventListener('click',()=>{
+ if(!confirm('Reset cash, collection, dealer deals, and saved progress in this browser?'))return;
+ cash=1200;owns=[];state={};try{localStorage.removeItem('cardShowAfterHoursMulti')}catch(e){}
+ visit(0);update();toast('Game save reset.')
+});
+document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='c'){e.preventDefault();document.querySelector('.cheat-area').scrollIntoView({behavior:'smooth',block:'center'})}});
+
+load();renderTabs();visit(0);update();showVisitor();rebuildGradeChoices();
+})();
+</script></body></html>
