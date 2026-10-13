@@ -363,6 +363,7 @@ function rebuildGradeChoices(){
 }
 function renderGradePreview(){
  const c=owns.find(x=>String(x.id)===$('gradeCardSelect').value), opt=gradeOptions[$('gradeServiceSelect').value];
+ $('gradePreview').classList.remove('grade-finished');
  $('slabCompany').textContent=opt.label;$('slabGrade').textContent=c?(c.grade?String(c.grade):'RAW'):'—';
  $('gradePreview').querySelector('.grade-slab-label').style.background=opt.accent;
  $('slabCardName').textContent=c?c.card:'Select a card to submit';
@@ -1833,11 +1834,11 @@ function showLastSlab(){
  $id('slabCardName').textContent=lastGraded.card;
  $id('gradePreview').classList.add('grade-finished');
 }
-if(!lastGraded && !$id('gradeCardSelect').value){const already=owns.filter(c=>Number(c.grade)>0);if(already.length)lastGraded=already[already.length-1];}
+// Do not restore a previous graded card into the preview on page load.
 const originalPreview=renderGradePreview;
 renderGradePreview=function(){
  originalPreview();
- if(lastGraded && !$id('gradeCardSelect').value)showLastSlab();
+ // Always prioritize the currently selected card over any previous slab.
 };
 $id('gradeCardSelect').addEventListener('change',()=>{lastGraded=null;$id('gradePreview').classList.remove('grade-finished');renderGradePreview();});
 const batch=document.createElement('div');batch.id='batchGrading';
@@ -1862,7 +1863,7 @@ $id('batchSubmit').onclick=()=>{
   lastGraded=c;
  }
  $id('batchResult').textContent=output.join(' | ');
- update();showLastSlab();toast('Graded '+amount+' cards. Last slab: '+service+' '+lastGraded.grade);
+ update();renderGradePreview();toast('Graded '+amount+' cards. Last slab: '+service+' '+lastGraded.grade);
 };
 // Pass means a fresh card from the SAME dealer, not a new dealer.
 $id('csDealerPass').onclick=()=>{
@@ -2284,4 +2285,3 @@ syncDealerChat();
 })();
 </script>
 </body></html>
-
