@@ -2093,20 +2093,20 @@ function syncTimers(){
  }}
 }
 setInterval(syncTimers,1000);document.addEventListener('click',()=>setTimeout(syncTimers,30));syncTimers();
-// Grading preview reflects actual last completed grade, rather than a stale service selection.
-document.addEventListener('click',e=>{
- if(!e.target.closest('#collectorBulkSubmit,[data-xact="bulkGrade"],#gradeSubmit,#batchSubmit'))return;
- setTimeout(()=>{
-  if(typeof owns==='undefined')return;
-  const graded=owns.filter(c=>Number(c.grade)>0);
-  const last=graded.at(-1);
-  if(!last)return;
-  const g=document.getElementById('slabGrade'),n=document.getElementById('slabCardName'),company=document.getElementById('slabCompany');
-  if(g)g.textContent=String(last.grade);
-  if(n)n.textContent=last.card;
-  if(company)company.textContent=last.grader||'PSA';
- },100);
-});
+// The selected card controls the slab. A pending card displays RAW;
+// a completed submission displays its revealed grade until selection changes.
+const gradingSelector=document.getElementById('gradeCardSelect');
+if(gradingSelector){
+ gradingSelector.addEventListener('change',()=>{
+  const card=owns.find(c=>String(c.id)===gradingSelector.value);
+  const grade=document.getElementById('slabGrade');
+  const name=document.getElementById('slabCardName');
+  const company=document.getElementById('slabCompany');
+  if(grade)grade.textContent=card?(card.grade?String(card.grade):'RAW'):'—';
+  if(name)name.textContent=card?card.card:'Select a card to submit';
+  if(company)company.textContent=document.getElementById('gradeServiceSelect')?.value||'PSA';
+ });
+}
 })();
 </script>
 <script id="kt-dealer-player-and-pass-fix">
