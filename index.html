@@ -2299,38 +2299,49 @@ syncDealerChat();
  'use strict';
  const select=document.getElementById('gradeCardSelect');
  const service=document.getElementById('gradeServiceSelect');
- const preview=document.getElementById('gradePreview');
- if(!select||!service||!preview)return;
- const label=document.getElementById('slabCompany'),number=document.getElementById('slabGrade'),name=document.getElementById('slabCardName');
+ const slab=document.getElementById('gradePreview');
+ if(!select||!service||!slab)return;
+ const name=document.getElementById('slabCardName');
+ const number=document.getElementById('slabGrade');
+ const company=document.getElementById('slabCompany');
  const detail=document.getElementById('gradeDetails');
  const costs={PSA:35,BGS:40,SGC:28,KSA:25};
- let syncing=false;
- function sync(){
-  if(syncing)return;
-  // A finished grade may remain visible when there are no eligible cards.
-  const selected=select.value;
-  if(!selected)return;
-  const card=(typeof owns!=='undefined'?owns:[]).find(c=>String(c.id)===selected);
-  if(!card)return;
-  const company=service.value||'PSA';
-  const desiredGrade=card.grade?String(card.grade):'RAW';
-  syncing=true;
+ let locked=false;
+ function draw(){
+  if(locked)return;
+  locked=true;
   try{
-   if(label&&label.textContent!==company)label.textContent=company;
-   if(number&&number.textContent!==desiredGrade)number.textContent=desiredGrade;
-   if(name&&name.textContent!==card.card)name.textContent=card.card;
-   if(detail){const d='Submission '+company+' · fee $'+(costs[company]||35)+' · Card: '+card.card+' · Final grade revealed after submission.';if(detail.textContent!==d)detail.textContent=d;}
-   preview.classList.remove('grade-finished');
-  }finally{syncing=false;}
+   const id=select.value;
+   const card=(typeof owns!=='undefined'&&Array.isArray(owns))?owns.find(c=>String(c.id)===id):null;
+   // A dropdown card ALWAYS controls the slab. When there are no ungraded
+   // cards, the latest completed slab is shown, not a stale cached grade.
+   const completed=(!card&&typeof lastGraded!=='undefined')?lastGraded:null;
+   const shown=card||completed;
+   const grader=completed&&!card?(completed.grader||'PSA'):(service.value||'PSA');
+   const grade=shown?(shown.grade?String(shown.grade):'RAW'):'RAW';
+   const title=shown?String(shown.card||shown.name||'Unknown card'):'Select a card to submit';
+   if(name&&name.textContent!==title)name.textContent=title;
+   if(number&&number.textContent!==grade)number.textContent=grade;
+   if(company&&company.textContent!==grader)company.textContent=grader;
+   const accent={PSA:'#ad263a',BGS:'#1e3250',SGC:'#111111',KSA:'#174f80'};
+   const header=slab.querySelector('.grade-slab-label');
+   if(header)header.style.background=accent[grader]||accent.PSA;
+   slab.classList.toggle('grade-finished',!!(shown&&shown.grade));
+   if(detail&&card){
+    const desc='Submission '+grader+' · fee $'+(costs[grader]||35)+' · Card: '+title+' · Final grade revealed after submission.';
+    if(detail.textContent!==desc)detail.textContent=desc;
+   }
+  }finally{locked=false;}
  }
- select.addEventListener('change',sync);
- select.addEventListener('input',sync);
- service.addEventListener('change',sync);
- // Some older modules rewrite the slab after the dropdown changes.
- // Keep the selected card authoritative without changing grading or inventory data.
- const observer=new MutationObserver(()=>sync());
- observer.observe(preview,{subtree:true,characterData:true,childList:true});
- sync();
+ select.addEventListener('change',draw);
+ select.addEventListener('input',draw);
+ service.addEventListener('change',draw);
+ // A redraw may replace dropdown options after a grading submission.
+ new MutationObserver(draw).observe(select,{childList:true,subtree:true,attributes:true,attributeFilter:['value','selected']});
+ new MutationObserver(draw).observe(slab,{childList:true,subtree:true,characterData:true});
+ document.getElementById('submitGrade')?.addEventListener('click',()=>queueMicrotask(draw));
+ document.getElementById('batchSubmit')?.addEventListener('click',()=>queueMicrotask(draw));
+ draw();
 })();
 </script>
 </body></html>
