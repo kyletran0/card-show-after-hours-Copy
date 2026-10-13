@@ -1833,13 +1833,13 @@ function showLastSlab(){
  $id('slabCardName').textContent=lastGraded.card;
  $id('gradePreview').classList.add('grade-finished');
 }
-if(!lastGraded){const already=owns.filter(c=>Number(c.grade)>0);if(already.length)lastGraded=already[already.length-1];}
+if(!lastGraded && !$id('gradeCardSelect').value){const already=owns.filter(c=>Number(c.grade)>0);if(already.length)lastGraded=already[already.length-1];}
 const originalPreview=renderGradePreview;
 renderGradePreview=function(){
  originalPreview();
- if(lastGraded)showLastSlab();
+ if(lastGraded && !$id('gradeCardSelect').value)showLastSlab();
 };
-$id('gradeCardSelect').addEventListener('change',()=>{lastGraded=null;$id('gradePreview').classList.remove('grade-finished')});
+$id('gradeCardSelect').addEventListener('change',()=>{lastGraded=null;$id('gradePreview').classList.remove('grade-finished');renderGradePreview();});
 const batch=document.createElement('div');batch.id='batchGrading';
 batch.innerHTML='<b>Bulk grading submissions</b><p>Select up to 20 ungraded cards at once. Each card is charged the normal service fee.</p><label for="batchCount">Number of cards</label> <select id="batchCount"></select> <button class="btn gold" id="batchSubmit" type="button">Grade selected quantity</button><div id="batchResult" aria-live="polite"></div>';
 $id('gradeResult').after(batch);
@@ -2108,45 +2108,6 @@ document.addEventListener('click',e=>{
 });
 })();
 </script>
-<script id="kt-last-slab-display-fix">(function(){
-'use strict';
-const el=id=>document.getElementById(id);
-const slab=el('gradePreview');if(!slab)return;
-let pinnedId=sessionStorage.getItem('ktLastSlabId')||'';
-let showing=false;
-function newestGraded(){
- if(typeof owns==='undefined')return null;
- return owns.find(c=>String(c.id)===pinnedId&&Number(c.grade)>0)||[...owns].reverse().find(c=>Number(c.grade)>0)||null;
-}
-function show(){
- const c=newestGraded();if(!c||showing)return;
- showing=true;
- try{
-  pinnedId=String(c.id);sessionStorage.setItem('ktLastSlabId',pinnedId);
-  const g=el('slabGrade'),n=el('slabCardName'),company=el('slabCompany');
-  if(g&&g.textContent!==String(c.grade))g.textContent=String(c.grade);
-  if(n&&n.textContent!==c.card)n.textContent=c.card;
-  if(company&&company.textContent!==(c.grader||'PSA'))company.textContent=c.grader||'PSA';
-  slab.classList.add('grade-finished');
-  const details=el('gradeDetails');if(details&&details.textContent.includes('No eligible card selected'))details.textContent='Last completed slab: '+(c.grader||'PSA')+' '+c.grade+' — '+c.card;
- }finally{showing=false}
-}
-// Refresh after a completed submission, not only when the current select still has a value.
-function recordLatest(){
- if(typeof owns==='undefined')return;
- const graded=[...owns].reverse().find(c=>Number(c.grade)>0);
- if(graded){pinnedId=String(graded.id);sessionStorage.setItem('ktLastSlabId',pinnedId);show()}
-}
-for(const id of ['submitGrade','batchSubmit','collectorBulkSubmit']){
- el(id)?.addEventListener('click',()=>{setTimeout(recordLatest,0);setTimeout(recordLatest,150)},true);
-}
-// The game's normal update() rebuilds the preview, so restore the actual completed grade.
-const observer=new MutationObserver(()=>{if(!showing)show()});
-observer.observe(slab,{subtree:true,characterData:true,childList:true});
-// Changing service must not turn a finished slab back into RAW.
-el('gradeServiceSelect')?.addEventListener('change',()=>setTimeout(show,0));
-show();
-})();</script>
 <script id="kt-dealer-player-and-pass-fix">
 (function(){
 'use strict';
