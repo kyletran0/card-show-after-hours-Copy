@@ -989,8 +989,27 @@ function ktAdvanceVisitorSoon(){
 function ktScheduleMysteryDismiss(node){
  if(!node)return;
  if(node._ktDismissTimer)clearTimeout(node._ktDismissTimer);
- node._ktDismissTimer=setTimeout(()=>{node._ktDismissTimer=null;if(node.id==='ktCustomerPackReveal')node.hidden=true;else node.remove();},30000);
+ node.dataset.ktMysteryExpires=String(Date.now()+30000);
+ node._ktDismissTimer=setTimeout(()=>{
+  node._ktDismissTimer=null;
+  if(node.id==='ktCustomerPackReveal')node.hidden=true;
+  else node.remove();
+ },30000);
 }
+// Check actual elapsed time too: browser timer throttling must not leave old reveals visible.
+function ktCleanExpiredMysteryReveals(){
+ const now=Date.now();
+ document.querySelectorAll('[data-kt-mystery-expires]').forEach(node=>{
+  if(now>=Number(node.dataset.ktMysteryExpires)){
+   if(node._ktDismissTimer)clearTimeout(node._ktDismissTimer);
+   if(node.id==='ktCustomerPackReveal')node.hidden=true;
+   else node.remove();
+  }
+ });
+}
+setInterval(ktCleanExpiredMysteryReveals,1000);
+document.addEventListener('visibilitychange',ktCleanExpiredMysteryReveals);
+window.addEventListener('focus',ktCleanExpiredMysteryReveals);
 
 function visitorBidStep(current,limit,estimate){const gap=Math.max(0,limit-current);if(!gap)return current;const step=Math.max(1,Math.min(gap,Math.round(Math.max(2,estimate*.035))));return Math.min(limit,current+step);}
 const visitorPreferences={
